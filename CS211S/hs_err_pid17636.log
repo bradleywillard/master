@@ -1,0 +1,157 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x0000000105632d10, pid=17636, tid=18947
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_45-b14) (build 1.8.0_45-b14)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.45-b02 mixed mode bsd-amd64 compressed oops)
+# Problematic frame:
+# V  [libjvm.dylib+0x432d10]
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f924284d800):  JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_in_vm, id=18947, stack(0x0000700000ec4000,0x0000700000fc4000)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x0000000000000014
+
+Registers:
+RAX=0x0000000000000001, RBX=0x0000700000fc3a8b, RCX=0x00000001059fa190, RDX=0x0000700000fc3a8b
+RSP=0x0000700000fc39d0, RBP=0x0000700000fc39e0, RSI=0x00007f924284d800, RDI=0x0000000000000014
+R8 =0x0000000000000000, R9 =0x00007f924052d9e0, R10=0x000000005be01c46, R11=0x00007f9240500000
+R12=0x00007f924284d800, R13=0x0000000000000014, R14=0x0000000000000014, R15=0x00007f9240601a40
+RIP=0x0000000105632d10, EFLAGS=0x0000000000010206, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x0000700000fc39d0)
+0x0000700000fc39d0:   0000700000fc3a8b 0000700000fc3a8b
+0x0000700000fc39e0:   0000700000fc3a40 00000001055430d6
+0x0000700000fc39f0:   00007f924284d800 0000000000000000
+0x0000700000fc3a00:   0000000000000000 0000000000000000
+0x0000700000fc3a10:   00007f924284d800 00007f924284d800
+0x0000700000fc3a20:   0000700000fc3a8b 0000700000fc3a90
+0x0000700000fc3a30:   0000000000000014 0000000000000002
+0x0000700000fc3a40:   0000700000fc3a60 000000010417c780
+0x0000700000fc3a50:   0000000000000001 0000700000fc3b08
+0x0000700000fc3a60:   0000700000fc3ad0 00000001041611f3
+0x0000700000fc3a70:   0000700000fc3aa0 00007f9240530670
+0x0000700000fc3a80:   0000000500000032 0000000900fc3b08
+0x0000700000fc3a90:   0000000000000000 0000000000000000
+0x0000700000fc3aa0:   0000000000000000 0000700000fc3c90
+0x0000700000fc3ab0:   0000000104183e7a 00007f9240715bb0
+0x0000700000fc3ac0:   0000700000fc3b08 000000010418f598
+0x0000700000fc3ad0:   0000700000fc3ae0 00000001041612ec
+0x0000700000fc3ae0:   0000700000fc3d00 000000010416a898
+0x0000700000fc3af0:   00000dce00000013 00000000000f0200
+0x0000700000fc3b00:   00007f9240715a40 0000700000fc3baf
+0x0000700000fc3b10:   00007f92000000d5 0000700000fc3b20
+0x0000700000fc3b20:   0000000000000057 0000700000fc3b58
+0x0000700000fc3b30:   0000000000000000 0000000000000000
+0x0000700000fc3b40:   00000dce0000001c 00007fff0000d380
+0x0000700000fc3b50:   0000700000fc3b58 927f000005000000
+0x0000700000fc3b60:   06000000106d4240 00003e74696e693c
+0x0000700000fc3b70:   0000005629280300 7f00000100000000
+0x0000700000fc3b80:   000000186d424092 0000006e69616d04
+0x0000700000fc3b90:   6176616a4c5b2816 74532f676e616c2f
+0x0000700000fc3ba0:   0056293b676e6972 3109000000000000
+0x0000700000fc3bb0:   696e6f7473202c31 63202c30313d796c
+0x0000700000fc3bc0:   202c373d736c616f 393d65736f6e6576 
+
+Instructions: (pc=0x0000000105632d10)
+0x0000000105632cf0:   40 48 48 85 c0 75 e0 30 c0 0f b6 c0 5d c3 31 c0
+0x0000000105632d00:   5d c3 55 48 89 e5 53 48 83 ec 08 48 85 ff 74 24
+0x0000000105632d10:   48 8b 1f 48 85 db 74 1c 48 83 fb 37 74 16 48 8b
+0x0000000105632d20:   03 48 89 df ff 50 10 84 c0 b8 00 00 00 00 48 0f 
+
+Register to memory mapping:
+
+RAX=0x0000000000000001 is an unknown value
+RBX=0x0000700000fc3a8b is pointing into the stack for thread: 0x00007f924284d800
+RCX=0x00000001059fa190: UseMembar+0 in /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/jre/lib/server/libjvm.dylib at 0x0000000105200000
+RDX=0x0000700000fc3a8b is pointing into the stack for thread: 0x00007f924284d800
+RSP=0x0000700000fc39d0 is pointing into the stack for thread: 0x00007f924284d800
+RBP=0x0000700000fc39e0 is pointing into the stack for thread: 0x00007f924284d800
+RSI=0x00007f924284d800 is a thread
+RDI=0x0000000000000014 is an unknown value
+R8 =0x0000000000000000 is an unknown value
+R9 =0x00007f924052d9e0 is an unknown value
+R10=0x000000005be01c46 is an unknown value
+R11=0x00007f9240500000 is an unknown value
+R12=0x00007f924284d800 is a thread
+R13=0x0000000000000014 is an unknown value
+R14=0x0000000000000014 is an unknown value
+R15=0x00007f9240601a40 is an unknown value
+
+
+Stack: [0x0000700000ec4000,0x0000700000fc4000],  sp=0x0000700000fc39d0,  free space=1022k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.dylib+0x432d10]
+V  [libjvm.dylib+0x3430d6]
+C  [libjdwp.dylib+0x20780]  isMethodSynthetic+0x63
+C  [libjdwp.dylib+0x51f3]  methods1+0x10b
+C  [libjdwp.dylib+0x52ec]  methodsWithGeneric+0xe
+C  [libjdwp.dylib+0xe898]  debugLoop_run+0x1ce
+C  [libjdwp.dylib+0x1f6ba]  attachThread+0x4d
+V  [libjvm.dylib+0x38401c]
+V  [libjvm.dylib+0x549acf]
+V  [libjvm.dylib+0x54b1c0]
+V  [libjvm.dylib+0x46ea7e]
+C  [libsystem_pthread.dylib+0x3c13]  _pthread_body+0x83
+C  [libsystem_pthread.dylib+0x3b90]  _pthread_body+0x0
+C  [libsystem_pthread.dylib+0x1375]  thread_start+0xd
+C  0x0000000000000000
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f924284f000 JavaThread "Service Thread" daemon [_thread_blocked, id=22531, stack(0x00007000015d9000,0x00007000016d9000)]
+  0x00007f924081c000 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=22019, stack(0x00007000014d6000,0x00007000015d6000)]
+  0x00007f9240813800 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=21507, stack(0x00007000013d3000,0x00007000014d3000)]
+  0x00007f9240812800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=20995, stack(0x00007000012d0000,0x00007000013d0000)]
+  0x00007f9240811800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=20483, stack(0x00007000011cd000,0x00007000012cd000)]
+  0x00007f924284e800 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=19971, stack(0x00007000010ca000,0x00007000011ca000)]
+  0x00007f9242002000 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=19459, stack(0x0000700000fc7000,0x00007000010c7000)]
+=>0x00007f924284d800 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_in_vm, id=18947, stack(0x0000700000ec4000,0x0000700000fc4000)]
+  0x00007f9241011000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=14863, stack(0x0000700000dc1000,0x0000700000ec1000)]
+  0x00007f924080b000 JavaThread "Finalizer" daemon [_thread_blocked, id=14339, stack(0x0000700000c3b000,0x0000700000d3b000)]
+  0x00007f9242029000 JavaThread "Reference Handler" daemon [_thread_blocked, id=13827, stack(0x0000700000b38000,0x0000700000c38000)]
+  0x00007f9242802800 JavaThread "main" [_thread_blocked, id=5891, stack(0x000070000011a000,0x000070000021a000)]
+
+Other Threads:
+  0x00007f924100f800 VMThread [stack: 0x0000700000a35000,0x0000700000b35000] [id=13315]
+  0x00007f924284c000 WatcherThread [stack: 0x00007000016dc000,0x00007000017dc000] [id=23043]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 18944K, used 5368K [0x00000007aab00000, 0x00000007ac000000, 0x00000007c0000000)
+  eden space 16384K, 17% used [0x00000007aab00000,0x00000007aadc24c8,0x00000007abb00000)
+  from space 2560K, 99% used [0x00000007abb00000,0x00000007abd7bc08,0x00000007abd80000)
+  to   space 2560K, 0% used [0x00000007abd80000,0x00000007abd80000,0x00000007ac000000)
+ ParOldGen       total 44032K, used 3128K [0x0000000780000000, 0x0000000782b00000, 0x00000007aab00000)
+  object space 44032K, 7% used [0x0000000780000000,0x000000078030e000,0x0000000782b00000)
+ Metaspace       used 5729K, capacity 5930K, committed 6144K, reserved 1056768K
+  class space    used 679K, capacity 750K, committed 768K, reserved 1048576K
+
+Card table byte_map: [0x0000000115529000,0x000000011572a000] byte_map_base: 0x0000000111929000
+
+Marking Bits: (ParMarkBitMap*) 0x0000000105ac27a0
+ Begin Bits: [0x0000000115880000, 0x0000000116880000)
+ End Bits:   [0x0000000116880000, 0x0000000117880000)
+
+Polling page: 0x000000010415b000
+
+CodeCache: size=245760Kb used=2085Kb max_used=2085Kb free=243674Kb
+ bounds [0x0000000106169000, 0x00000001063d9000, 0x0000000115169000]
+ total_blobs=755 nmethods=453 adapters=224
+ compilation: enabled
+
+Compilation events (10 events):
