@@ -1,4 +1,4 @@
-package org.bwillard.ccsf.course.cs211s.assn13;
+package org.bwillard.ccsf.course.cs211s._13_immutable_class_with_annotations;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;

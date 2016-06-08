@@ -1,4 +1,4 @@
-package org.bwillard.ccsf.course.cs211s.assn3;
+package org.bwillard.ccsf.course.cs211s._3_builder_and_strategy;
 
 public class PianoPlayer implements Player {
 	

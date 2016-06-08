@@ -1,4 +1,4 @@
-package org.bwillard.ccsf.course.cs211s.assn6;
+package org.bwillard.ccsf.course.cs211s._6_serialization;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -6,12 +6,25 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import org.bwillard.ccsf.course.cs211s.assn6.Car;
+import org.bwillard.ccsf.course.cs211s._6_serialization.Car;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.io.*;
 
+/**
+ * This file represents the GUI panel the user uses to:
+ * 1) Race 
+ * 2) Replay the last race 
+ * 3) Save the current race to a serialized file
+ * 4) Load a previously saved race
+ * 
+ * This file contains action listeners for the 
+ * GUI components/buttons (race, replay, save, load) described above
+ * 
+ * @author bradleywillard
+ *
+ */
 public class ControlPanel extends JPanel {
 	
 	private static final String FILE_EXT = "ser";

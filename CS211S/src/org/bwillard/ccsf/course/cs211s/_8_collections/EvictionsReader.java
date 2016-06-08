@@ -1,4 +1,4 @@
-package org.bwillard.ccsf.course.cs211s.assn8;
+package org.bwillard.ccsf.course.cs211s._8_collections;
 
 import java.io.BufferedReader;
 import java.io.File;

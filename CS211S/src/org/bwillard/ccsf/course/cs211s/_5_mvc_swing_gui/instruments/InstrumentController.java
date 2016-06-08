@@ -1,10 +1,10 @@
-package org.bwillard.ccsf.course.cs211s.assn5.instruments;
+package org.bwillard.ccsf.course.cs211s._5_mvc_swing_gui.instruments;
 
 import java.awt.event.*;
 
 import javax.swing.JOptionPane;
 
-import org.bwillard.ccsf.course.cs211s.assn5.instruments.*;
+import org.bwillard.ccsf.course.cs211s._5_mvc_swing_gui.instruments.*;
 
 
 public class InstrumentController {

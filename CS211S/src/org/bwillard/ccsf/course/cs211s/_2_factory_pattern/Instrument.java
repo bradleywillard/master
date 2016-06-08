@@ -1,4 +1,4 @@
-package org.bwillard.ccsf.course.cs211s.assn2;
+package org.bwillard.ccsf.course.cs211s._2_factory_pattern;
 
 import java.text.DecimalFormat;
 

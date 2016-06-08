@@ -1,4 +1,4 @@
-package org.bwillard.ccsf.course.cs211s.assn12;
+package org.bwillard.ccsf.course.cs211s._12_threads;
 
 import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;

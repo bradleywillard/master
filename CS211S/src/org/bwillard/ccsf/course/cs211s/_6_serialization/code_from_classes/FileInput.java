@@ -1,4 +1,4 @@
-package org.bwillard.ccsf.course.cs211s.assn6.code_from_classes;
+package org.bwillard.ccsf.course.cs211s._6_serialization.code_from_classes;
 
 import java.util.*;
 import java.io.*;

@@ -1,5 +1,11 @@
-package org.bwillard.ccsf.course.cs211s.assn1;
+package org.bwillard.ccsf.course.cs211s._1_class_design;
 
+/**
+ * Pojo for guitar
+ * 
+ * @author bradleywillard
+ *
+ */
 public class Guitar extends Stringed {
 
 	private boolean amplified;

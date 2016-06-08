@@ -1,4 +1,4 @@
-package org.bwillard.ccsf.course.cs211s.assn10;
+package org.bwillard.ccsf.course.cs211s._10_streams;
 
 import java.io.*;
 import java.nio.charset.*;
@@ -67,6 +67,7 @@ public class Homework10Streams {
 				.max()
 				.getAsDouble();// YOUR ANSWER HERE
 		System.out.println(nyHighAmount);
+		//BRADASDFASDF
 		
 		//Q6b: Print the customers in sorted order by amount spent, then by last name
 		System.out.println("\nQ6b: Should print the customers in sorted order by amount spent, then by last name");

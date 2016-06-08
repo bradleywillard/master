@@ -1,8 +1,8 @@
-package org.bwillard.ccsf.course.cs211s.assn9;
+package org.bwillard.ccsf.course.cs211s._9_lambdas;
 
 import java.awt.geom.Point2D;
 
-import static org.bwillard.ccsf.course.cs211s.assn9.LineCharacteristic.LineChar;
+import static org.bwillard.ccsf.course.cs211s._9_lambdas.LineCharacteristic.LineChar;
 
 public class LineCharacteristicFactory {
 	

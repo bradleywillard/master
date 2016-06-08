@@ -1,4 +1,4 @@
-package org.bwillard.ccsf.course.cs211s.assn11;
+package org.bwillard.ccsf.course.cs211s._11_threads;
 
 import java.time.*;
 

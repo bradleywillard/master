@@ -1,8 +1,8 @@
-package org.bwillard.ccsf.course.cs211s.last;
+package org.bwillard.ccsf.course.cs211s._12_threads;
 
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.bwillard.ccsf.course.cs211s.last.Book.BookType;
+import org.bwillard.ccsf.course.cs211s._12_threads.Book.BookType;
 
 
 /**

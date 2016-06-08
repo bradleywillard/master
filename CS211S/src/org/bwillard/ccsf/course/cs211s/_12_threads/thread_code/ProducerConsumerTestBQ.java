@@ -1,4 +1,4 @@
-package org.bwillard.ccsf.course.cs211s.assn12.thread_code;
+package org.bwillard.ccsf.course.cs211s._12_threads.thread_code;
 
 import java.util.concurrent.*;
 

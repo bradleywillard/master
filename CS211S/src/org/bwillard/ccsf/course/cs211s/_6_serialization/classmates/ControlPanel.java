@@ -1,4 +1,4 @@
-package org.bwillard.ccsf.course.cs211s.assn6.classmates;
+package org.bwillard.ccsf.course.cs211s._6_serialization.classmates;
 
 // Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
 // Jad home page: http://www.kpdus.com/jad.html

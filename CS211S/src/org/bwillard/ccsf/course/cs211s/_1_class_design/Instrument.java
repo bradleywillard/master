@@ -1,4 +1,4 @@
-package org.bwillard.ccsf.course.cs211s.assn1;
+package org.bwillard.ccsf.course.cs211s._1_class_design;
 
 public abstract class Instrument {
 
@@ -12,10 +12,22 @@ public abstract class Instrument {
 	abstract void tune();
 	abstract void repair();
 	
+	/**
+	 * Default constructor
+	 */
 	public Instrument() {
 		
 	}
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param price
+	 * @param type
+	 * @param productId
+	 * @param brand
+	 * @param model
+	 */
 	public Instrument(
 			double price, 
 			InstrumentType type, 

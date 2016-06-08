@@ -1,4 +1,4 @@
-package org.bwillard.ccsf.course.cs211s.assn4;
+package org.bwillard.ccsf.course.cs211s._4_swing_gui;
 
 import java.awt.Color;
 import java.awt.Dimension;

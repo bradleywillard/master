@@ -1,4 +1,4 @@
-package org.bwillard.ccsf.course.cs211s.last;
+package org.bwillard.ccsf.course.cs211s._12_threads;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,8 @@ import java.util.Random;
  * The class takes in two parameters: the number of sections on the spinner and the number of spins.
  * When the thread is run, it randomly selects a space on the spinner the specified number of times. 
  * (It can just print the output.)
- * Write a program to create and start multiple spinner threads.
+ * 
+ * This program creates and starts multiple spinner threads.
  * 
  * @author bradleywillard
  *
@@ -82,7 +83,7 @@ public class GameSpinner {
 		new Thread( () -> new GameSpinner(15, 5).spin() ).start();
 		new Thread( () -> new GameSpinner(5, 5).spin() ).start();
 		
-		//COMMENTING THIS OLD STUFF OUT AFTER NICOLE'S QUESTION. THANKS NICOLE!
+		//PRE-LAMBDA... ANTIQUATED
 		/*Thread spinner1 = new Thread(new GameSpinner(25, 5));
 		Thread spinner2 = new Thread(new GameSpinner(10, 5));
 		Thread spinner3 = new Thread(new GameSpinner(50, 5));

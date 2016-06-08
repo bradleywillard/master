@@ -155,7 +155,7 @@ CodeCache: size=245760Kb used=1715Kb max_used=1715Kb free=244044Kb
  compilation: enabled
 
 Compilation events (10 events):
-Event: 0.299 Thread 0x00007f9b9b017000  331       1       org.bwillard.ccsf.course.cs211s.assn10.Customer::getState (5 bytes)
+Event: 0.299 Thread 0x00007f9b9b017000  331       1       org.bwillard.ccsf.course.cs211s._10_streams.Customer::getState (5 bytes)
 Event: 0.299 Thread 0x00007f9b9b017000 nmethod 331 0x0000000103114990 code [0x0000000103114ae0, 0x0000000103114bf0]
 Event: 4.592 Thread 0x00007f9b9b017000  334       3       java.lang.ThreadLocal::getMap (5 bytes)
 Event: 4.592 Thread 0x00007f9b9b017000 nmethod 334 0x0000000103114fd0 code [0x0000000103115140, 0x0000000103115290]
@@ -395,7 +395,7 @@ Dynamic libraries:
 
 VM Arguments:
 jvm_args: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:50793 -Dfile.encoding=UTF-8 
-java_command: org.bwillard.ccsf.course.cs211s.assn10.Homework10Streams
+java_command: org.bwillard.ccsf.course.cs211s._10_streams.Homework10Streams
 java_class_path (initial): /Users/bradleywillard/Documents/workspace/CS211S/bin
 Launcher Type: SUN_STANDARD
 

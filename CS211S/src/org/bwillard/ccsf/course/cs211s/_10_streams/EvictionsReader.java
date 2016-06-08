@@ -1,4 +1,4 @@
-package org.bwillard.ccsf.course.cs211s.assn10;
+package org.bwillard.ccsf.course.cs211s._10_streams;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -26,7 +26,7 @@ import java.util.HashSet;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import org.bwillard.ccsf.course.cs211s.assn8.Eviction;
+import org.bwillard.ccsf.course.cs211s._8_collections.Eviction;
 /**
  * 
  * @author bradleywillard

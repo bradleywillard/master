@@ -1,4 +1,4 @@
-package org.bwillard.ccsf.course.cs211s.assn7;
+package org.bwillard.ccsf.course.cs211s._7_generics;
 
 import java.util.ArrayList;
 import java.util.Collections;

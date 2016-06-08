@@ -1,9 +1,9 @@
-package org.bwillard.ccsf.course.cs211s.assn12;
+package org.bwillard.ccsf.course.cs211s._12_threads;
 
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
 
-import static org.bwillard.ccsf.course.cs211s.assn12.FoodTester.DELAY;
+import static org.bwillard.ccsf.course.cs211s._12_threads.FoodTester.DELAY;
 
 public class CookThread implements Runnable {
 

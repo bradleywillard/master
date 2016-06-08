@@ -1,5 +1,11 @@
-package org.bwillard.ccsf.course.cs211s.assn1;
+package org.bwillard.ccsf.course.cs211s._1_class_design;
 
+/**
+ * Main runner class used to build instruments and run the program
+ * 
+ * @author bradleywillard
+ *
+ */
 public class InstrumentDriver {
 
 	public static void main(String[] args) {

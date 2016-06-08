@@ -387,7 +387,7 @@ Dynamic libraries:
 
 VM Arguments:
 jvm_args: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:50785 -Dfile.encoding=UTF-8 
-java_command: org.bwillard.ccsf.course.cs211s.assn10.Homework10Streams
+java_command: org.bwillard.ccsf.course.cs211s._10_streams.Homework10Streams
 java_class_path (initial): /Users/bradleywillard/Documents/workspace/CS211S/bin
 Launcher Type: SUN_STANDARD
 

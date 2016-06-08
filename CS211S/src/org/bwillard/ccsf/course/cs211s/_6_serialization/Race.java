@@ -1,8 +1,16 @@
-package org.bwillard.ccsf.course.cs211s.assn6;
+package org.bwillard.ccsf.course.cs211s._6_serialization;
 
 import java.awt.*;
 import javax.swing.*;
 
+/**
+ * This is the class the applet is loaded and ran from.
+ * If in eclipse, right click, Run
+ * If from command line, type java Race
+ * 
+ * @author bradleywillard
+ *
+ */
 public class Race {
 
 		public static void main(String[] args) {

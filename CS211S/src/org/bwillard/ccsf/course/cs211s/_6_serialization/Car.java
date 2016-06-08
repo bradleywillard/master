@@ -1,4 +1,4 @@
-package org.bwillard.ccsf.course.cs211s.assn6;
+package org.bwillard.ccsf.course.cs211s._6_serialization;
 
 import javax.swing.*;
 import java.awt.geom.*;

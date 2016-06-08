@@ -1,4 +1,4 @@
-package org.bwillard.ccsf.course.cs211s.assn10;
+package org.bwillard.ccsf.course.cs211s._10_streams;
 
 import java.time.LocalDate;
 

@@ -282,7 +282,7 @@ Event: 9.497 Thread 0x00007fb383006800 Uncommon trap: reason=class_check action=
 Event: 26.986 Thread 0x00007fb383006800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000011141111c method=java.time.LocalDate.toString()Ljava/lang/String; @ 37
 Event: 27.014 Thread 0x00007fb383006800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000001114092fc method=java.util.TreeMap.successor(Ljava/util/TreeMap$Entry;)Ljava/util/TreeMap$Entry; @ 43
 Event: 27.014 Thread 0x00007fb383006800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000011139aab8 method=java.util.TreeMap$PrivateEntryIterator.hasNext()Z @ 4
-Event: 28.620 Thread 0x00007fb383006800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000011142e090 method=org.bwillard.ccsf.course.cs211s.assn10.Eviction.toString()Ljava/lang/String; @ 487
+Event: 28.620 Thread 0x00007fb383006800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000011142e090 method=org.bwillard.ccsf.course.cs211s._10_streams.Eviction.toString()Ljava/lang/String; @ 487
 Event: 28.620 Thread 0x00007fb383006800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000111405b48 method=java.lang.String.valueOf(Ljava/lang/Object;)Ljava/lang/String; @ 1
 
 Internal exceptions (10 events):
@@ -509,7 +509,7 @@ Dynamic libraries:
 
 VM Arguments:
 jvm_args: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:54138 -Dfile.encoding=UTF-8 
-java_command: org.bwillard.ccsf.course.cs211s.assn10.EvictionsReader
+java_command: org.bwillard.ccsf.course.cs211s._10_streams.EvictionsReader
 java_class_path (initial): /Users/bradleywillard/Documents/workspace/CS211S/bin
 Launcher Type: SUN_STANDARD
 

@@ -1,10 +1,10 @@
-package org.bwillard.ccsf.course.cs211s.last;
+package org.bwillard.ccsf.course.cs211s._12_threads;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.bwillard.ccsf.course.cs211s.last.Book.BookType;
+import org.bwillard.ccsf.course.cs211s._12_threads.Book.BookType;
 
 /**
  * Write an addBook(Book b) method that adds a book to the appropriate list.  

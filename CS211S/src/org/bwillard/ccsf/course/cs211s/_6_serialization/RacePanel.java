@@ -1,4 +1,4 @@
-package org.bwillard.ccsf.course.cs211s.assn6;
+package org.bwillard.ccsf.course.cs211s._6_serialization;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -10,7 +10,14 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Random;
 
-
+/**
+ * This file represents a race panel, where n number of cars will race at random speeds each time
+ * a new race is started.  Each race creates a serialized file containing the race speeds for each
+ * car which can be reloaded and reran.
+ * 
+ * @author bradleywillard
+ *
+ */
 public class RacePanel extends JPanel {
 	
 	private final static int DEFAULT_WIDTH = 450, DEFAULT_HEIGHT = 300;

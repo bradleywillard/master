@@ -1,4 +1,4 @@
-package org.bwillard.ccsf.course.cs211s.assn5;
+package org.bwillard.ccsf.course.cs211s._5_mvc_swing_gui;
 
 /*
  * Copyright (c) 1995, 2008, Oracle and/or its affiliates. All rights reserved.

@@ -1,4 +1,4 @@
-package org.bwillard.ccsf.course.cs211s.assn5;
+package org.bwillard.ccsf.course.cs211s._5_mvc_swing_gui;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -13,7 +13,7 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import org.bwillard.ccsf.course.cs211s.assn4.CircleSquareDrawer;
+import org.bwillard.ccsf.course.cs211s._4_swing_gui.CircleSquareDrawer;
 
 public class MouseTail extends JPanel {
 	

@@ -1,5 +1,11 @@
-package org.bwillard.ccsf.course.cs211s.assn1;
+package org.bwillard.ccsf.course.cs211s._1_class_design;
 
+/**
+ * Any stringed instrument, guitar, violin, ucalaly, banjo, mandolin, etc...
+ * 
+ * @author bradleywillard
+ *
+ */
 public abstract class Stringed extends Instrument {
 
 	private int numStrings;
