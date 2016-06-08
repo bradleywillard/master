@@ -1,4 +1,0 @@
-hello
-hi,4,bye,3	2
-
-1	shoot,4,hi,yo
