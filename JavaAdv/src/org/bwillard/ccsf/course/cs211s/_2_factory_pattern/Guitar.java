@@ -1,5 +1,10 @@
 package org.bwillard.ccsf.course.cs211s._2_factory_pattern;
 
+/**
+ * 
+ * @author bradleywillard
+ *
+ */
 public class Guitar extends Instrument {
 		
 	//Just a product id prefix used when creating the object

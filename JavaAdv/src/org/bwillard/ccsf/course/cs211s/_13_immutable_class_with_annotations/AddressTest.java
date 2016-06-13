@@ -1,5 +1,11 @@
 package org.bwillard.ccsf.course.cs211s._13_immutable_class_with_annotations;
 
+/**
+ * Test our custom Annotation class, Address
+ * 
+ * @author bradleywillard
+ *
+ */
 public class AddressTest {
 
 	public static void main(String[] args) {

@@ -3,6 +3,8 @@ package org.bwillard.ccsf.course.cs211s._2_factory_pattern;
 import java.util.Scanner;
 
 /**
+ * Main program tester class. 
+ * Creates a bunch of new instruments and runs a comprehensive test
  * 
  * @author bradleywillard
  *

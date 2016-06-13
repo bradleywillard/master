@@ -7,6 +7,7 @@ import java.lang.annotation.Target;
 import java.lang.annotation.ElementType;
 
 /**
+ * Custom Annotation example
  * 
  * @author bradleywillard
  *

@@ -2,6 +2,12 @@ package org.bwillard.ccsf.course.cs211s._13_immutable_class_with_annotations;
 
 import java.lang.reflect.Field;
 
+/**
+ * Custom Annotation class example
+ * 
+ * @author bradleywillard
+ *
+ */
 public class Address {
 	
 	private static final String STR_FMT = "%s characters for %s is too %s: %s, %s is %s";		

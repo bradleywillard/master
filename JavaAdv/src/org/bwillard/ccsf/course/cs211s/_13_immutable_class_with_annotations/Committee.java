@@ -20,6 +20,14 @@ public final class Committee {
 	private final Member committeeChair;
 	private final LocalDate formationDate;
 
+	/**
+	 * Constructor
+	 * 
+	 * @param name
+	 * @param numMembers
+	 * @param m
+	 * @param d
+	 */
 	public Committee(String name, int numMembers, Member m, LocalDate d) {
 		this.name = name;
 		this.numMembers = numMembers;

@@ -2,8 +2,16 @@ package org.bwillard.ccsf.course.cs211s._2_factory_pattern;
 
 import java.text.DecimalFormat;
 
+/**
+ * 
+ * @author bradleywillard
+ *
+ */
 public abstract class Instrument implements Comparable<Instrument> {
 
+	/**
+	 * Instance data
+	 */
 	private InstrumentType type;
 	private String brand;
 	private String model;
@@ -13,6 +21,9 @@ public abstract class Instrument implements Comparable<Instrument> {
 	
 	protected boolean amplified;
 	
+	/**
+	 * abstract methods...
+	 */
 	abstract void play();
 	abstract void tune();
 	abstract void repair();
@@ -20,6 +31,15 @@ public abstract class Instrument implements Comparable<Instrument> {
 	abstract boolean isString();
 	abstract boolean isPercussive();
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param type
+	 * @param brand
+	 * @param model
+	 * @param pidPrefix
+	 * @param price
+	 */
 	public Instrument(
 			InstrumentType type,
 			String brand, 
@@ -43,6 +63,12 @@ public abstract class Instrument implements Comparable<Instrument> {
 		System.out.println("Sold " + quantity + " " + brand + " " + model + "'s" + " at $" + price + " = " + total);
 	}
 	
+	/**
+	 * Used to print out a nicely formatted monetary amount like $2,999.99
+	 * 
+	 * @param value
+	 * @return
+	 */
 	public String valueWithCurrency(double value) {
 		DecimalFormat format = new DecimalFormat("$#.00");
 		return format.format(value);

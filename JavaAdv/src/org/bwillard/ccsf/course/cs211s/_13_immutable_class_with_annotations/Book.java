@@ -1,15 +1,12 @@
 package org.bwillard.ccsf.course.cs211s._13_immutable_class_with_annotations;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 public class Book implements Comparable<Book> {
 
+	/**
+	 * Instance data
+	 */
 	private String title, author;
 	private int publishYear, expectedSales, actualSales;
 	private double cost;
@@ -18,6 +15,18 @@ public class Book implements Comparable<Book> {
 	
 	enum BookType {FICTION, NON_FICTION}
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param title
+	 * @param author
+	 * @param publishYear
+	 * @param expectedSales
+	 * @param actualSales
+	 * @param cost
+	 * @param availableDigital
+	 * @param bookType
+	 */
 	public Book(String title, String author, int publishYear, int expectedSales, 
 			int actualSales, double cost, boolean availableDigital,
 			BookType bookType) {
@@ -184,102 +193,6 @@ public class Book implements Comparable<Book> {
 				+ ", actualSales=" + actualSales + ", cost=" + cost
 				+ ", availableDigital=" + availableDigital + ", bookType="
 				+ bookType + "]";
-	}
-
-
-	public static void main(String[] args) {
-		List<Book> books = new ArrayList<Book>();
-		books.add(new Book("Close Joe", "Joe Electrician", 1997, 20000, 975000, 2500.00, false, BookType.NON_FICTION));
-		books.add(new Book("My Lips Are Super Chapped", "Ander Castarstaslopaghi", 2003, 31000, 32000, 501.50, true, BookType.NON_FICTION));
-		books.add(new Book("Aboomba Boomba", "Cheech Marin", 1973, 500, 900, 200.14, false, BookType.FICTION));
-		books.add(new Book("Responsible Construction Truck Man", "Helmet Richards", 2001, 4000, 70000, 5.00, true, BookType.FICTION));
-		books.add(new Book("Helmet Man", "Shameless Will", 2015, 42009, 65181, 100.02, true, BookType.NON_FICTION));
-		books.add(new Book("Hook Nose Octagon: The Best Damn Player on the Team", "Bradley D. Willard", 1998, 5900, 2900029, 100.94, false, BookType.NON_FICTION));
-		books.add(new Book("Awww, Poor Doggy Woggy", "Bradley D. Willard", 2007, 9902, 98723498, 1000.44, true, BookType.NON_FICTION));
-		books.add(new Book("Poor Little Baby", "Oops Johnson", 2013, 18999, 723498, 120.10, false, BookType.NON_FICTION));
-		books.add(new Book("When Chipmunk Bites", "Woofers McWaggers", 2015, 182, 598, 69.50, true, BookType.FICTION));
-		books.add(new Book("The Adventures of Barkie McWaffles", "Woofers McMaggor", 2007, 763, 123467, 250.27, true, BookType.FICTION));
-		books.add(new Book("Making Excuses Again", "Bradley D. Willard", 2015, 0, 9, 20.27, false, BookType.FICTION));
-		books.add(new Book("Minus Jones", "Ander Castarstaslopaghi", 2000, 3000, 3000, 16.65, true, BookType.FICTION));
-		books.add(new Book("A Futile Activity", "Budley D. Williams", 2012, 3000, 2950, 21.29, true, BookType.FICTION));
-		books.add(new Book("Trying to Go Somplace Else", "Willabra Whiplash", 2000, 3091, 3087, 10.29, true, BookType.FICTION));
-		
-		//books.sort
-		//Lambda
-		books.sort((b1, b2) -> {
-	        if (b1.getActualSales().compareTo(b2.getActualSales()) == 0) {
-	            return b1.getExpectedSales().compareTo(b2.getExpectedSales());
-	        } else {
-	        	return b1.getActualSales().compareTo(b2.getActualSales());
-	        }
-	        
-	    });
-		
-		
-		books.stream().forEach(System.out::println);
-		System.out.println();
-	
-		
-		//Streams
-		books.stream()
-			.sorted(Comparator.comparing(Book::getActualSales).thenComparing(Book::getExpectedSales))
-			.forEach(System.out::println);
-		
-		//#5 the number of unique authors in the list
-		System.out.println("# of distinct authors: " + books.stream().map(b -> b.getAuthor()).distinct().count());
-		
-		//#5 print the title of every book available digitally, sorted by title
-		System.out.println("\nDigitally Available: ");
-		books.stream()
-			.filter(Book::isAvailableDigital)
-			.sorted(Comparator.comparing(Book::getTitle))
-			.forEach(System.out::println);
-		
-		//#5 the average cost of all fiction books published in 2015
-		double avg = books.stream()
-			.filter(b -> b.getBookType().equals(BookType.FICTION))
-			.filter(b -> b.getPublishYear() == 2015)
-			.mapToDouble(Book::getCost)
-			.average().getAsDouble();
-		System.out.println("\nAverage cost of all fiction books published in 2015: " + avg);
-		
-		
-		//#5 the most expensive book published in 2015
-		double mostExp = books.stream()
-				.filter(b -> b.getPublishYear() == 2015)
-				.mapToDouble(b -> b.getCost())
-				.max().getAsDouble();
-		
-		//books.stream().max(Book::getHeight).get();
-		System.out.println("\nMost expensive book published in 2015: " + mostExp);
-		
-		//#5 whether or not there are any digital, non-fiction books published in 2015
-		boolean exists = books.stream()
-				.filter(b -> b.isAvailableDigital())
-				.filter(b -> b.getBookType() == BookType.FICTION)
-				.findAny()
-				.isPresent();
-		System.out.println("\nAny digital, non-fiction books published in 2015? " + exists);
-		
-		//#5 generate a list of authors (not books!) for all books whose expected sales were higher than their actual sales
-		System.out.println("\nAuthors whose books expected sales were > than actual sales :-(");
-		books.stream()
-			.filter(b -> b.getExpectedSales() > b.getActualSales())
-			.map(Book::getAuthor)
-			.distinct()
-			.forEach(System.out::println);
-			
-		
-		//#5 generate a map of books by author (key = author, value = list of books)
-		/*books.stream()
-				.collect(Collectors.toMap(Book::getAuthor, Function.identity()))
-				.forEach((author, b) -> System.out.format("Author %s: %s\n", author, b));*/
-		Map<String, List<Book>> map = books.stream().collect(Collectors.groupingBy(Book::getAuthor));
-		map.forEach((author, bookList) -> {
-			bookList.forEach(book -> System.out.format("AUTHOR: " + author + ", TITLE: %s\n", book.getTitle()));
-		});
-		
-		
 	}
 	
 }
