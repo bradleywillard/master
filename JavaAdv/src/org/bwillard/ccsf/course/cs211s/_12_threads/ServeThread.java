@@ -5,6 +5,14 @@ import java.util.concurrent.BlockingQueue;
 
 import static org.bwillard.ccsf.course.cs211s._12_threads.FoodTester.DELAY;
 
+/**
+ * This thread class is used to manage a server station.  BlockingQueue will allow only so many
+ * plates, say 3 to be sitting in between the cook and server station at any given time.
+ * Server will be blocked from taking more plates if the cook hasn't put anymore up there there.
+ * 
+ * @author bradleywillard
+ *
+ */
 public class ServeThread implements Runnable {
 
 	/**

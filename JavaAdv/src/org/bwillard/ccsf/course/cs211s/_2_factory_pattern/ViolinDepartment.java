@@ -2,7 +2,11 @@ package org.bwillard.ccsf.course.cs211s._2_factory_pattern;
 
 import java.util.Scanner;
 
-
+/**
+ * 
+ * @author bradleywillard
+ *
+ */
 public class ViolinDepartment extends Department {
 
 	@Override

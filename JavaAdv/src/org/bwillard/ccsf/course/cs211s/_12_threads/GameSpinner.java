@@ -6,21 +6,30 @@ import java.util.Random;
 
 
 /**
- * The class takes in two parameters: the number of sections on the spinner and the number of spins.
- * When the thread is run, it randomly selects a space on the spinner the specified number of times. 
- * (It can just print the output.)
- * 
- * This program creates and starts multiple spinner threads.
- * 
+ * This program represents a game wheel, similar to Wheel of Fortune.  The purpose is to
+ * showcase a very simple threading example, whereby we creates and start multiple spinner threads.  
+ * Each thread creates a new Game Spinner - 
+ * 		A wheel with however many sections and spins are passed into the constructor
+ *  
  * @author bradleywillard
  *
  */
 public class GameSpinner {
 		
+	/**
+	 * Instance data
+	 */
 	private int numSections, numSpins;
 	private List<Section> sections;
 	private Random rand;
 
+	/**
+	 * Constructor - 
+	 * 	Takes in two parameters: the number of sections on the spinner and the number of spins.
+	 * 
+	 * @param numSections
+	 * @param numSpins
+	 */
 	public GameSpinner(int numSections, int numSpins) {
 		this.numSections = numSections;
 		this.numSpins = numSpins;
@@ -33,11 +42,10 @@ public class GameSpinner {
 
 	
 	/**
-	 * SPIN!!
+	 * Randomly selects a space on the spinner the specified number of times and prints the output
 	 */
 	private synchronized void spin() {
 		for(int i = 1; i <= numSpins; i++) {
-			//System.out.println("STARTING SPIN " + i);
 			int secIdx = rand.nextInt(sections.size());
 			Section winner = sections.get(secIdx);
 			System.out.println("SPIN " + i + " Section " + winner.getId() + " at index " + secIdx + " is the winner!" );
@@ -57,7 +65,8 @@ public class GameSpinner {
 	}
 	
 	/**
-	 * Section for the spin wheel
+	 * Helper class representing a section for the spin wheel
+	 * 
 	 * @author bradleywillard
 	 *
 	 */
@@ -72,18 +81,19 @@ public class GameSpinner {
 	}
 	
 	/**
-	 * MAIN
+	 * MAIN program runner
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		
+		//Passes in number of sections, and number of spins
 		new Thread( () -> new GameSpinner(25, 5).spin() ).start();
 		new Thread( () -> new GameSpinner(10, 5).spin() ).start();
 		new Thread( () -> new GameSpinner(50, 5).spin() ).start();
 		new Thread( () -> new GameSpinner(15, 5).spin() ).start();
 		new Thread( () -> new GameSpinner(5, 5).spin() ).start();
 		
-		//PRE-LAMBDA... ANTIQUATED
+		//PRE-LAMBDA... ANTIQUATED! NAH... J/K
 		/*Thread spinner1 = new Thread(new GameSpinner(25, 5));
 		Thread spinner2 = new Thread(new GameSpinner(10, 5));
 		Thread spinner3 = new Thread(new GameSpinner(50, 5));

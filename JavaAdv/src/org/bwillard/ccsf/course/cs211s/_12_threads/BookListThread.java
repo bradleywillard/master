@@ -1,5 +1,6 @@
 package org.bwillard.ccsf.course.cs211s._12_threads;
 
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.bwillard.ccsf.course.cs211s._12_threads.Book.BookType;
@@ -16,12 +17,22 @@ import org.bwillard.ccsf.course.cs211s._12_threads.Book.BookType;
  */
 public class BookListThread implements Runnable {
 
+	/**
+	 * Instance data
+	 */
 	private BookList bookList;
 	private Book book;
 	private Type type;
 	
 	private enum Type {ADD,REMOVE};
 	 
+	/**
+	 * Constructor 
+	 * 
+	 * @param bookList
+	 * @param book
+	 * @param type
+	 */
 	public BookListThread(BookList bookList, Book book, Type type) {
 		this.bookList = bookList;
 		this.book = book;
@@ -35,9 +46,12 @@ public class BookListThread implements Runnable {
 		} else if(type == Type.REMOVE) {
 			bookList.removeBook(book);
 		}
-		
 	}
 
+	/**
+	 * Program loads new books using threads, adding and removing
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		Book mainBook = new Book("The Buck Stops Here with Bruce", "Brose Wullard", 1997, 100, 975, 29.99, false, BookType.NON_FICTION);
 		BookList bookList = new BookList();
@@ -84,7 +98,6 @@ public class BookListThread implements Runnable {
 		Thread addThread9 = new Thread(new BookListThread(bookList, book9, Type.ADD));
 		addThread9.start();
 		
-		//Book bookRemove6 = new Book("Hook Nose Octagon: The Best Damn Player on the Team", "Bradley D. Willard", 1998, 5900, 2900029, 100.94, false, BookType.NON_FICTION);
 		Thread removeThread2 = new Thread(new BookListThread(bookList, book6, Type.REMOVE));
 		removeThread2.start();
 		
@@ -110,23 +123,19 @@ public class BookListThread implements Runnable {
 		
 		bookList.printBooks();
 		
-		//Book book15 = new Book("The Adventures of Barkie McWaffles", "Woofers McMaggor", 2007, 763, 123467, 250.27, true, BookType.FICTION);
 		Thread removeThread15 = new Thread(new BookListThread(bookList, book10, Type.REMOVE));
 		removeThread15.start();
 		
-		//Book book16 = new Book("Minus Jones", "Ander Castarstaslopaghi", 2000, 3000, 3000, 16.65, true, BookType.FICTION);
 		Thread removeThread16 = new Thread(new BookListThread(bookList, book12, Type.REMOVE));
 		removeThread16.start();
 		
-		//Book book17 = new Book("Awww, Poor Doggy Woggy", "Bradley D. Willard", 2007, 9902, 98723498, 1000.44, true, BookType.NON_FICTION);
 		Thread removeThread17 = new Thread(new BookListThread(bookList, book7, Type.REMOVE));
 		removeThread17.start();
 		
-		//Book book18 = new Book("Poor Little Baby", "Oops Johnson", 2013, 18999, 723498, 120.10, false, BookType.NON_FICTION);
 		Thread removeThread8 = new Thread(new BookListThread(bookList, book8, Type.REMOVE));
 		removeThread8.start();
 		
-		ConcurrentHashMap<String, String> gradeMap = new ConcurrentHashMap<>();
+		Map<String, String> gradeMap = new ConcurrentHashMap<>();
 		String grade = gradeMap.get("CS211S");
 		if(grade != null) {
 			gradeMap.put("CS211S", "Grade 95 (A)");

@@ -4,10 +4,21 @@ import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
+/**
+ * Producer/Consumer program example. 
+ * In this case the producer is a cook and the consumer is a server in a restaurant scenario
+ * 
+ * @author bradleywillard
+ *
+ */
 public class FoodTester {
 
 	public static final int DELAY = 1000;
 	
+	/**
+	 * main program runner
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		List<Food> foodList = Collections.synchronizedList(new ArrayList<>());
 		foodList.add(new Food("Spinach Dip", 2, 1));
@@ -32,7 +43,7 @@ public class FoodTester {
 		//removed in FIFO order
 		BlockingQueue<Food> queue = new ArrayBlockingQueue<Food>(3, true);
 		
-		// INITIALIZE AND START YOUR THREADS HERE!
+		// INITIALIZE AND START THREADS!
 		Thread cooker = new Thread(new CookThread(foodList, queue));  
 		Thread server = new Thread(new ServeThread(foodList, queue));
 		cooker.start();

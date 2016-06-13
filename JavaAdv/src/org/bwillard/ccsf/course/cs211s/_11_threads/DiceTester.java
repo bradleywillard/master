@@ -5,8 +5,20 @@ import java.time.Instant;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * Simple threaded dice game that counts the most and least doubles thrown by a player
+ * 
+ * @author bradleywillard
+ *
+ */
 public class DiceTester {
 
+	/**
+	 * User enters n number of players and for each player n number of rolls
+	 * The program takes 
+	 * @param args
+	 * @throws InterruptedException
+	 */
 	public static void main(String[] args) throws InterruptedException {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("How many players?");
@@ -16,19 +28,19 @@ public class DiceTester {
 		
 		Instant start = Instant.now();
 		DicePlayer[] players = new DicePlayer[numPlayers];
-		for(int i=0; i<players.length; i++) {
+		for(int i = 0; i < players.length; i++) {
 			players[i] = new DicePlayer(i, numRolls);
 		}
 		
-		// YOUR CODE STARTS HERE
 		// for each player in the array, start the thread
 		for(DicePlayer dp : players) {
 			dp.start();
 		}
 		
 		// print to the console how many active threads you have
-		System.out.println("\nActive thread count: " + Thread.activeCount());
+		System.out.println("\nActive thread count right after finished STARTING all threads (Each player rolling their dice on their own thread): " + Thread.activeCount());
 		
+		//Check for any active threads and join them to the main thread if needs be...
 		for(DicePlayer dp : players) {
 			//System.out.println("***" + dp.toString());
 			if(dp.isAlive()) {
@@ -39,18 +51,18 @@ public class DiceTester {
 				
 		}
 		
-		// print to the console how many active threads you have
-		System.out.println("Active thread count should only be 1 now: " + Thread.activeCount() +"\n");
+		// Print to the console how many active threads you have
+		System.out.println("Active thread count after joining all threads to the main thread should only be 1 now: " + Thread.activeCount() +"\n");
 				
 		// FOR THE RESULTS:
-		// make sure all threads have completed before printing out the results
+		// Make sure all threads have completed before printing out the results
 		while(Thread.activeCount() > 1) {
 			Thread.sleep(500);
 			System.out.println("Waiting for thread's to finish...");
 		}
 		
-		// use streams to find the player with the most and least doubles (you can do it in one line!)
-		// hint: use the max method, which takes a Comparator as a parameter
+		// Use streams to find the player with the most and least doubles (all in one line!)
+		// Use the max method, which takes a Comparator as a parameter
 		DicePlayer mostDoubles = Arrays.asList(players).stream()
 				.max((p1, p2) -> Integer.compare(p1.getDoublesCount(), p2.getDoublesCount()))
 				.get();
@@ -61,7 +73,7 @@ public class DiceTester {
 		System.out.println("The Least Doubles: " + leastDoubles +"\n");
 		
 		long duration = Duration.between(start, Instant.now()).toMillis();
-		System.out.println("Time for threading: " + duration + "\n");
+		System.out.println("Time for threading: " + duration + "ms\n");
 		
 		//UNCOMMENT IF YOU WANT TO...
 		//Print all doubles just to be sure the min and max doubles are correct...

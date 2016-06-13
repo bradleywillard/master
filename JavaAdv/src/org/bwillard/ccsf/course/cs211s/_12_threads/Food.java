@@ -1,5 +1,11 @@
 package org.bwillard.ccsf.course.cs211s._12_threads;
 
+/**
+ * Simple pojo for a food item.
+ * 
+ * @author bradleywillard
+ *
+ */
 public class Food {
 	
 	private String name;

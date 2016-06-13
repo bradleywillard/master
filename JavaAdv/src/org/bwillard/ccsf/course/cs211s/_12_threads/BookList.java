@@ -7,26 +7,34 @@ import java.util.List;
 import org.bwillard.ccsf.course.cs211s._12_threads.Book.BookType;
 
 /**
- * Write an addBook(Book b) method that adds a book to the appropriate list.  
- * Write a removeBook(Book b) method that removes the book from the appropriate list.
- * Write a printBooks() method that prints both lists.
- * Write a separate thread class that is described by a BookList object, a Book, and a type (add or remove). The thread class is responsible for adding or removing the book to/from the list. 
- * Create several add and remove threads and start them up.
- * Make sure all methods are threadsafe. Consider two different ways you could do this.
+ * 
+ * Class used for managing two lists for fiction and non-fiction books.  Includes thread-safe
+ * methods to add/remove books
  * 
  * @author bradleywillard
  *
  */
 public class BookList {
 
+	/**
+	 * Instance data
+	 */
 	List<Book> fictionBooks;
 	List<Book> nonFictionBooks;
 	
+	/**
+	 * Constructor - sets up our instance data with an initial step of thread-safety
+	 */
 	public BookList() {
 		fictionBooks = Collections.synchronizedList(new ArrayList<>());
 		nonFictionBooks = Collections.synchronizedList(new ArrayList<>());
 	}
 
+	/**
+	 * Thread safe method add books
+	 * 
+	 * @param b
+	 */
 	public void addBook(Book b) {
 		if(b != null) {
 			if(b.getBookType() == BookType.FICTION) {
@@ -43,6 +51,10 @@ public class BookList {
 		}
 	}
 	
+	/**
+	 * Thread safe method to remove books
+	 * @param b
+	 */
 	public void removeBook(Book b) {
 		if(b != null) {
 			if(b.getBookType() == BookType.FICTION) {

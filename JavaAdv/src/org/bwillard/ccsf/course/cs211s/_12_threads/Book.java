@@ -8,8 +8,17 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+/**
+ * Program to prints out books based on desired criteria, using java 8 streams!
+ * 
+ * @author bradleywillard
+ *
+ */
 public class Book implements Comparable<Book> {
 
+	/**
+	 * Instance data
+	 */
 	private String title, author;
 	private int publishYear, expectedSales, actualSales;
 	private double cost;
@@ -18,6 +27,18 @@ public class Book implements Comparable<Book> {
 	
 	enum BookType {FICTION, NON_FICTION}
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param title
+	 * @param author
+	 * @param publishYear
+	 * @param expectedSales
+	 * @param actualSales
+	 * @param cost
+	 * @param availableDigital
+	 * @param bookType
+	 */
 	public Book(String title, String author, int publishYear, int expectedSales, 
 			int actualSales, double cost, boolean availableDigital,
 			BookType bookType) {
@@ -99,6 +120,12 @@ public class Book implements Comparable<Book> {
 		}
 	}
 	
+	/**
+	 * Comparator class for more sorting capabilities beyond the default
+	 * 
+	 * @author bradleywillard
+	 *
+	 */
 	class BookCostComparator implements Comparator<Book> {
 		@Override
 	    public int compare(Book b1, Book b2) {
@@ -187,6 +214,11 @@ public class Book implements Comparable<Book> {
 	}
 
 
+	/**
+	 * Run scenarios below exemplifying the power of java 8 streams!
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		List<Book> books = new ArrayList<Book>();
 		books.add(new Book("Close Joe", "Joe Electrician", 1997, 20000, 975000, 2500.00, false, BookType.NON_FICTION));
@@ -221,21 +253,22 @@ public class Book implements Comparable<Book> {
 	
 		
 		//Streams
+		//#1 Print the books, sorted first by actualSales, then by expectedSales
 		books.stream()
 			.sorted(Comparator.comparing(Book::getActualSales).thenComparing(Book::getExpectedSales))
 			.forEach(System.out::println);
 		
-		//#5 the number of unique authors in the list
+		//#2 Print the number of unique authors in the list
 		System.out.println("# of distinct authors: " + books.stream().map(b -> b.getAuthor()).distinct().count());
 		
-		//#5 print the title of every book available digitally, sorted by title
+		//#3 Print the title of every book available digitally, sorted by title
 		System.out.println("\nDigitally Available: ");
 		books.stream()
 			.filter(Book::isAvailableDigital)
 			.sorted(Comparator.comparing(Book::getTitle))
 			.forEach(System.out::println);
 		
-		//#5 the average cost of all fiction books published in 2015
+		//#4 Print the average cost of all fiction books published in 2015
 		double avg = books.stream()
 			.filter(b -> b.getBookType().equals(BookType.FICTION))
 			.filter(b -> b.getPublishYear() == 2015)
@@ -243,17 +276,14 @@ public class Book implements Comparable<Book> {
 			.average().getAsDouble();
 		System.out.println("\nAverage cost of all fiction books published in 2015: " + avg);
 		
-		
-		//#5 the most expensive book published in 2015
+		//#5 Print the most expensive book published in 2015
 		double mostExp = books.stream()
 				.filter(b -> b.getPublishYear() == 2015)
 				.mapToDouble(b -> b.getCost())
 				.max().getAsDouble();
-		
-		//books.stream().max(Book::getHeight).get();
 		System.out.println("\nMost expensive book published in 2015: " + mostExp);
 		
-		//#5 whether or not there are any digital, non-fiction books published in 2015
+		//#6 Print whether or not there are any digital, non-fiction books published in 2015
 		boolean exists = books.stream()
 				.filter(b -> b.isAvailableDigital())
 				.filter(b -> b.getBookType() == BookType.FICTION)
@@ -261,7 +291,8 @@ public class Book implements Comparable<Book> {
 				.isPresent();
 		System.out.println("\nAny digital, non-fiction books published in 2015? " + exists);
 		
-		//#5 generate a list of authors (not books!) for all books whose expected sales were higher than their actual sales
+		//#7 Generate a list of authors (not books!) for all books whose expected 
+		//sales were higher than their actual sales
 		System.out.println("\nAuthors whose books expected sales were > than actual sales :-(");
 		books.stream()
 			.filter(b -> b.getExpectedSales() > b.getActualSales())
@@ -270,10 +301,7 @@ public class Book implements Comparable<Book> {
 			.forEach(System.out::println);
 			
 		
-		//#5 generate a map of books by author (key = author, value = list of books)
-		/*books.stream()
-				.collect(Collectors.toMap(Book::getAuthor, Function.identity()))
-				.forEach((author, b) -> System.out.format("Author %s: %s\n", author, b));*/
+		//#8 Generate a map of books by author (key = author, value = list of books)
 		Map<String, List<Book>> map = books.stream().collect(Collectors.groupingBy(Book::getAuthor));
 		map.forEach((author, bookList) -> {
 			bookList.forEach(book -> System.out.format("AUTHOR: " + author + ", TITLE: %s\n", book.getTitle()));

@@ -22,11 +22,12 @@ public class DicePlayer extends Thread {
 	
 	@Override
 	public String toString() {
-		return "Player " + playerNum + " with " + numDoubles + " doubles";
+		//add one to the playerNum for display output since it's based on the array index
+		return "Player " + (playerNum + 1) + " with " + numDoubles + " doubles";
 	}
 	
 	private synchronized void roll() {
-		// YOUR CODE HERE (roll two dice and update the doubles count if necessary)
+		// Roll two dice and update the doubles count if necessary
 		int dice1 = generator.nextInt((6 - 1) + 1) + 1;
 		int dice2 = generator.nextInt((6 - 1) + 1) + 1;
 		if (dice1 == dice2) { 
