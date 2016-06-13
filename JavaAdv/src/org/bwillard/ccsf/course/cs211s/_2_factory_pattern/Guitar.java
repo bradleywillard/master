@@ -2,8 +2,19 @@ package org.bwillard.ccsf.course.cs211s._2_factory_pattern;
 
 public class Guitar extends Instrument {
 		
+	//Just a product id prefix used when creating the object
+	//We could create a getter for this property someday if it's needed
 	private static final String PID_PREFIX = "GUI";
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param type
+	 * @param brand
+	 * @param model
+	 * @param price
+	 * @param amplified
+	 */
 	public Guitar(
 			InstrumentType type,
 			String brand, 
@@ -26,22 +37,6 @@ public class Guitar extends Instrument {
 	@Override
 	public String getProductId() {
 		return "GUI-" + getType().getOrdinal() + "-" + hashCode();
-	}
-	
-	private void pick() {
-	    System.out.println("Picking " + getBrand() + " " + getModel() + "!");	
-	}
-	
-	private void strum() {
-		System.out.println("Strumming " + getBrand() + " " + getModel() + "!");
-	}
-	
-	private void shred() {
-		System.out.println("Shredding a lead solo on " + getBrand() + " " + getModel() + " like a God!");
-	}
-	
-	private void arpeggiate() {
-		System.out.println("Arpeggiating " + getBrand() + " " + getModel() + " with your fingers ONLY!  No picks!");
 	}
 	
 	@Override
@@ -67,6 +62,25 @@ public class Guitar extends Instrument {
 	@Override
 	boolean isAmplified() {
 		return amplified;
+	}
+	
+	/**
+	 * private methods for guitars....
+	 */
+	private void pick() {
+	    System.out.println("Picking " + getBrand() + " " + getModel() + "!");	
+	}
+	
+	private void strum() {
+		System.out.println("Strumming " + getBrand() + " " + getModel() + "!");
+	}
+	
+	private void shred() {
+		System.out.println("Shredding a lead solo on " + getBrand() + " " + getModel() + " like a God!");
+	}
+	
+	private void arpeggiate() {
+		System.out.println("Arpeggiating " + getBrand() + " " + getModel() + " with your fingers ONLY!  No picks!");
 	}
 
 }

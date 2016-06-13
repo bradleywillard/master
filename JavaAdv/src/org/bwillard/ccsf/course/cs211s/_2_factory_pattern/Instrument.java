@@ -31,6 +31,7 @@ public abstract class Instrument implements Comparable<Instrument> {
 		this.model = model;
 		this.pidPrefix = pidPrefix;
 		this.price = price;
+		this.quantity = 1;
 	}
 	
 	/*

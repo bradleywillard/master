@@ -8,9 +8,24 @@ package org.bwillard.ccsf.course.cs211s._1_class_design;
  */
 public class Guitar extends Stringed {
 
+	//Does this guitar plug into an amp?
 	private boolean amplified;
+	
+	//What type of guitar is it? acoustic, electric, etc...
 	private GuitarType guitarType;
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param amplified
+	 * @param numStrings
+	 * @param price
+	 * @param guitarType
+	 * @param stringType
+	 * @param productId
+	 * @param brand
+	 * @param model
+	 */
 	public Guitar(
 			boolean amplified, 
 			int numStrings, double price,

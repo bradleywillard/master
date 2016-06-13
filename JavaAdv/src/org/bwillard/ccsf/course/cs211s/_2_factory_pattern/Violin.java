@@ -2,8 +2,19 @@ package org.bwillard.ccsf.course.cs211s._2_factory_pattern;
 
 public class Violin extends Instrument {
 	
+	//Just a product id prefix used when creating the object
+	//We could create a getter for this property someday if it's needed
 	private static final String PID_PREFIX = "VIO";
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param type
+	 * @param brand
+	 * @param model
+	 * @param price
+	 * @param amplified
+	 */
 	public Violin(
 			InstrumentType type,
 			String brand, 

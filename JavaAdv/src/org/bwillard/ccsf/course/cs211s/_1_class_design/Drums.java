@@ -8,6 +8,15 @@ package org.bwillard.ccsf.course.cs211s._1_class_design;
  */
 public class Drums extends Instrument {
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param price
+	 * @param type
+	 * @param productId
+	 * @param brand
+	 * @param model
+	 */
 	public Drums(
 			double price, InstrumentType type,
 			String productId, String brand, String model) {

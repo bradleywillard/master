@@ -8,9 +8,26 @@ package org.bwillard.ccsf.course.cs211s._1_class_design;
  */
 public class Piano extends Percussive {
 	
+	/**
+	 * number of keys, i.e. 44, 66 or 88
+	 */
 	private int numKeys;
+	
+	/**
+	 * Upright, Organ, Square, Grand, etc...
+	 */
 	private PianoType pianoType;
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param numKeys
+	 * @param price
+	 * @param pianoType
+	 * @param productId
+	 * @param brand
+	 * @param model
+	 */
 	public Piano(
 			int numKeys, double price,
 			PianoType pianoType,

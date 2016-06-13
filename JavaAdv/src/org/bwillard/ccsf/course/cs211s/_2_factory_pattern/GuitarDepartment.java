@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class GuitarDepartment extends Department {
 	
+	@Override
 	public Instrument createInstrument(InstrumentType type, boolean automode) {
 		Instrument guitar = null;
 		if(automode) {
@@ -33,8 +34,10 @@ public class GuitarDepartment extends Department {
 			}
 						
 			guitar = new Guitar(type, brand, model, price, amplified);
+			
 		}
 		
+		addInstrument(guitar);
 		return guitar;
 		
 	}

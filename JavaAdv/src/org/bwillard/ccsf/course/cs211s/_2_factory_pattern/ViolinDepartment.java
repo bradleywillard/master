@@ -25,6 +25,7 @@ public class ViolinDepartment extends Department {
 			violin = new Violin(type, brand, model, price, amplified);
 		}
 		
+		addInstrument(violin);
 		return violin;
 		
 	}

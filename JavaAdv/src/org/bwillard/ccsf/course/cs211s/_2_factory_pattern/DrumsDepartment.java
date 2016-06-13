@@ -2,6 +2,11 @@ package org.bwillard.ccsf.course.cs211s._2_factory_pattern;
 
 import java.util.Scanner;
 
+/**
+ * 
+ * @author bradleywillard
+ *
+ */
 public class DrumsDepartment extends Department {
 
 	
@@ -20,8 +25,9 @@ public class DrumsDepartment extends Department {
 			String priceStr = scan.nextLine();
 			double price = isNumeric(priceStr) ? Double.parseDouble(priceStr) : 00.00;
 			drums = new Drums(brand, model, price);
+			
 		}
-		
+		addInstrument(drums);
 		return drums;
 	}
 	

@@ -21,6 +21,7 @@ public class PianoDepartment extends Department {
 			boolean amplified = InstrumentType.ORGAN == type ? true : false;
 			piano = new Piano(type, brand, model, price, amplified);
 		}
+		addInstrument(piano);
 		return piano;
 	}
 	

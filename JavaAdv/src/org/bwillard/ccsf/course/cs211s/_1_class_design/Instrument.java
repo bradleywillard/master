@@ -1,5 +1,10 @@
 package org.bwillard.ccsf.course.cs211s._1_class_design;
 
+/**
+ * 
+ * @author bradleywillard
+ *
+ */
 public abstract class Instrument {
 
 	private double price;
@@ -8,8 +13,19 @@ public abstract class Instrument {
 	private String brand;
 	private String model;
 	
+	/**
+	 * play the instrument
+	 */
 	abstract void play();
+	
+	/**
+	 * tune the instrument
+	 */
 	abstract void tune();
+	
+	/**
+	 * repair a broken instrument
+	 */
 	abstract void repair();
 	
 	/**
@@ -37,14 +53,6 @@ public abstract class Instrument {
 		this.productId = productId;
 		this.brand = brand;
 		this.model = model;
-	}
-	
-	/*
-	 * Common to all instruments.
-	 */
-	protected void sell(int quantity, Stringed productId, double price) {
-		double total = quantity * price;
-		System.out.println("Sold " + quantity + " " + productId + " at $" + price + " = " + total);
 	}
 	
 	public double getPrice() {

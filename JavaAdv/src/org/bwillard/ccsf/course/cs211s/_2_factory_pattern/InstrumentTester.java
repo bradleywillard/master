@@ -11,29 +11,29 @@ public class InstrumentTester {
 		boolean automode = "1".equalsIgnoreCase(scanner.nextLine()) ? true : false;
 		
 		Department guitars = new GuitarDepartment();
-		guitars.addInstrument(InstrumentType.ELECTRIC, 2, automode);
-		guitars.addInstrument(InstrumentType.STEEL_STRING, 3, automode);
-		guitars.addInstrument(InstrumentType.NYLON_STRING, 2, automode);
-		guitars.addInstrument(InstrumentType.BASS, 5, automode);
-		guitars.addInstrument(InstrumentType.ACOUSTIC_BASS, 1, automode);
+		guitars.createInstrument(InstrumentType.ELECTRIC, automode);
+		guitars.createInstrument(InstrumentType.STEEL_STRING, automode);
+		guitars.createInstrument(InstrumentType.NYLON_STRING, automode);
+		guitars.createInstrument(InstrumentType.BASS, automode);
+		guitars.createInstrument(InstrumentType.ACOUSTIC_BASS, automode);
 		System.out.println(guitars.toString());
 		
 		Department violins = new ViolinDepartment();
-		violins.addInstrument(InstrumentType.VIOLIN, 1, automode);
-		violins.addInstrument(InstrumentType.VIOLA, 1, automode);
-		violins.addInstrument(InstrumentType.CELLO, 2, automode);
-		violins.addInstrument(InstrumentType.UPRIGHT_BASS, 2, automode);
+		violins.createInstrument(InstrumentType.VIOLIN, automode);
+		violins.createInstrument(InstrumentType.VIOLA, automode);
+		violins.createInstrument(InstrumentType.CELLO, automode);
+		violins.createInstrument(InstrumentType.UPRIGHT_BASS, automode);
 		System.out.println(violins.toString());
 		
 		Department pianos = new PianoDepartment();
-		pianos.addInstrument(InstrumentType.GRAND, 10, automode);
-		pianos.addInstrument(InstrumentType.ORGAN, 2, automode);
-		pianos.addInstrument(InstrumentType.UPRIGHT, 4, automode);
-		pianos.addInstrument(InstrumentType.SQUARE, 5, automode);
+		pianos.createInstrument(InstrumentType.GRAND, automode);
+		pianos.createInstrument(InstrumentType.ORGAN, automode);
+		pianos.createInstrument(InstrumentType.UPRIGHT, automode);
+		pianos.createInstrument(InstrumentType.SQUARE, automode);
 		System.out.println(pianos.toString());
 		
 		Department drums = new DrumsDepartment();
-		drums.addInstrument(InstrumentType.DRUMS, 2, automode);
+		drums.createInstrument(InstrumentType.DRUMS, automode);
 		System.out.println(pianos.toString());
 		
 		scanner.close();

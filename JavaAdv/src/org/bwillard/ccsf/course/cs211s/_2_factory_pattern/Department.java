@@ -3,6 +3,11 @@ package org.bwillard.ccsf.course.cs211s._2_factory_pattern;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 
+ * @author bradleywillard
+ *
+ */
 public abstract class Department {
 
 	private static List<Instrument> instruments;
@@ -11,7 +16,7 @@ public abstract class Department {
 		instruments = new ArrayList<Instrument>();
 	}
 
-	public abstract Instrument createInstrument(Instrument instrument);
+	public abstract Instrument createInstrument(InstrumentType type, boolean testmode);
 
 	public void addInstrument(Instrument instrument) {
 		instruments.add(instrument);
