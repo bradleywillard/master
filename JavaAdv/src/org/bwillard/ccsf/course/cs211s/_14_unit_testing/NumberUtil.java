@@ -1,7 +1,12 @@
-package org.bwillard.ccsf.course.cs211s.assn14;
+package org.bwillard.ccsf.course.cs211s._14_unit_testing;
 
 import java.util.*;
 
+/**
+ * 
+ * @author bradleywillard
+ *
+ */
 public class NumberUtil {
 	
 	public static final String EMPTY_MSG = "numberList in " + NumberUtil.class + " cannot be empty";

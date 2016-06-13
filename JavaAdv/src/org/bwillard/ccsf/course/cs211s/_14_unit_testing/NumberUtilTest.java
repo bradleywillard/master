@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.bwillard.ccsf.course.cs211s.assn14;
+package org.bwillard.ccsf.course.cs211s._14_unit_testing;
 
 import static org.junit.Assert.*;
 
@@ -17,6 +17,9 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 /**
+ * Just a simple JUnit test class that uses some JUnit annotations like 
+ * @RunWith, @Parameters, @Test, etc...
+ * 
  * @author bradleywillard
  *
  */
