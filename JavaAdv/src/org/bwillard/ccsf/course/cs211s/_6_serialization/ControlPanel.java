@@ -26,13 +26,21 @@ import java.io.*;
  *
  */
 public class ControlPanel extends JPanel {
-	
+	/**
+	 * Class vars
+	 */
 	private static final String FILE_EXT = "ser";
 	
+	/**
+	 * Instance data
+	 */
 	private JButton raceButton, replayButton, saveButton, loadButton;
 	private JLabel winnerLabel;
 	private RacePanel racePanel;
 
+	/**
+	 * Constructor
+	 */
 	public ControlPanel() {
 		setLayout(new GridLayout(2,1));
 		

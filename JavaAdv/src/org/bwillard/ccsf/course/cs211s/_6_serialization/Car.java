@@ -3,19 +3,36 @@ package org.bwillard.ccsf.course.cs211s._6_serialization;
 import javax.swing.*;
 import java.awt.geom.*;
 
+/**
+ * Swing Pojo to represent the attributes of a car
+ *     Uses Builder pattern.  See static nested class CarBuilder.java 
+ * 
+ * @author bradleywillard
+ *
+ */
 public class Car implements java.io.Serializable {
+	/**
+	 * Class vars
+	 */
 	private static final long serialVersionUID = 7064780108335965068L;
+	private static final int DEFAULT_SPEED = 5;
+	private static final int DEFAULT_INCREMENT = 10;
 	
+	/**
+	 * Instance data
+	 */
 	private Point2D location;
 	private ImageIcon image;
 	private String name;
 	private double speed;
 	private int movingDistance;
 	private boolean finished;
-
-	private static final int DEFAULT_SPEED = 5;
-	private static final int DEFAULT_INCREMENT = 10;
 	
+	/**
+	 * Constructor - Builder pattern 
+	 * 
+	 * @param cb
+	 */
 	private Car(CarBuilder cb) {
 		this.location = cb.location;
 		this.image = cb.image;
@@ -72,7 +89,9 @@ public class Car implements java.io.Serializable {
 	}
 	
 	/**
-	 * Builder inner class
+	 * Builder class to construct Car objects
+	 * 
+	 * @author bradleywillard
 	 *
 	 */
 	public static class CarBuilder {
@@ -82,6 +101,13 @@ public class Car implements java.io.Serializable {
 		private int speed;
 		private int movingDistance;
 		
+		/**
+		 * Constructor 
+		 * 
+		 * @param location
+		 * @param image
+		 * @param name
+		 */
 		public CarBuilder(Point2D location, ImageIcon image, String name) {
 			this.location = location;
 			this.image = image;

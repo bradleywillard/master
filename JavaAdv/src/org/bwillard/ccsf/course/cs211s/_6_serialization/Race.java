@@ -4,9 +4,9 @@ import java.awt.*;
 import javax.swing.*;
 
 /**
- * This is the class the applet is loaded and ran from.
- * If in eclipse, right click, Run
- * If from command line, type java Race
+ * Class that loads the applet.  Main program runner.
+ * 		If in eclipse, right click, Run
+ * 		If from command line, type java Race
  * 
  * @author bradleywillard
  *

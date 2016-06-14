@@ -20,9 +20,17 @@ import java.util.Random;
  */
 public class RacePanel extends JPanel {
 	
+	/**
+	 * Class vars
+	 */
+	private static final long serialVersionUID = 1L;
 	private final static int DEFAULT_WIDTH = 450, DEFAULT_HEIGHT = 300;
 	private final static int NUM_CARS = 4, MAX_INCREMENT = 10, TIMER_DELAY = 10, OFFSET = 3;
+	public static final String FILE_PATH = "src/org/bwillard/ccsf/course/cs211s/_6_serialization/";
 	
+	/**
+	 * Instance data
+	 */
 	private List<Car> carList;
 	private Car winner;
 	private Timer timer;
@@ -30,8 +38,6 @@ public class RacePanel extends JPanel {
 	private int trackHeight, trackWidth, carLength;
 	private boolean allDone;
 	private int initX, initY; 
-
-	public static final String FILE_PATH = "src/org/bwillard/ccsf/course/cs211s/_6_serialization/";
 
 
 	/**
