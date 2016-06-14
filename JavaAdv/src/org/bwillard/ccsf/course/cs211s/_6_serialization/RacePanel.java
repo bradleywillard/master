@@ -31,7 +31,7 @@ public class RacePanel extends JPanel {
 	private boolean allDone;
 	private int initX, initY; 
 
-	public static final String FILE_PATH = "src/org/bwillard/ccsf/course/cs211s/assn6/";
+	public static final String FILE_PATH = "src/org/bwillard/ccsf/course/cs211s/_6_serialization/";
 
 
 	/**
