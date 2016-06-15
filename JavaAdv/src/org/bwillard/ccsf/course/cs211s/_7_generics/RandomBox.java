@@ -3,13 +3,22 @@ package org.bwillard.ccsf.course.cs211s._7_generics;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
-public class RandomBox<T extends Comparable<? super T>> implements Comparable<RandomBox<T>> {
+/**
+ * A class that illustrates a slightly more complex (looking) Generics implementation
+ * 		
+ * @author bradleywillard
+ *
+ * @param <T>
+ */
+public class RandomBox<T extends Comparable<T>> implements Comparable<RandomBox<T>> {
 
 	private T winner;
 	private List<T> entries;
 	
+	/**
+	 * Constructor
+	 */
 	public RandomBox() {
 		entries = new ArrayList<T>();
 	}
@@ -20,10 +29,22 @@ public class RandomBox<T extends Comparable<? super T>> implements Comparable<Ra
 		}
 	}
 	
+	/**
+	 * Method that draws a singular winner, after having called the method
+	 * that shuffles the box.  Just picks the first one.
+	 * 
+	 * @return
+	 */
 	public T drawWinner() {
 		return drawWinners(1).get(0);
 	}
 	
+	/**
+	 * Method that shuffles the RandomBox contestants around, then draw a given number of winners
+	 * 
+	 * @param numWinners
+	 * @return
+	 */
 	public List<T> drawWinners(int numWinners) {
 		List<T> winners = new ArrayList<T>(numWinners);
 		//If the box is empty... bail out

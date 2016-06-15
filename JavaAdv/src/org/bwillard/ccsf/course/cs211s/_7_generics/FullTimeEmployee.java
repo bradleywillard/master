@@ -1,11 +1,10 @@
 package org.bwillard.ccsf.course.cs211s._7_generics;
 
-/* concrete product class */
+
 public class FullTimeEmployee extends Employee{
 
 	public FullTimeEmployee(int id) {
 		super(id);
-		// additional child class setup would go here
 	}
 	
 	@Override

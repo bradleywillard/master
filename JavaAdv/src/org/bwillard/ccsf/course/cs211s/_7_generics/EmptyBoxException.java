@@ -1,11 +1,18 @@
 package org.bwillard.ccsf.course.cs211s._7_generics;
 
 public class EmptyBoxException extends Exception {
+	private static final long serialVersionUID = 1L;
 
-	//no arg constructor
+	/**
+	 * Constuctor
+	 */
     public EmptyBoxException() {}
 
-    //one arg constructor
+    /**
+     * Constructor 
+     * 
+     * @param message
+     */
     public EmptyBoxException(String message) {
        super(message);
     }

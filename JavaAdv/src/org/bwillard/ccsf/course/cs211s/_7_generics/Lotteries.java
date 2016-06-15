@@ -2,6 +2,13 @@ package org.bwillard.ccsf.course.cs211s._7_generics;
 
 import java.util.*;
 
+/**
+ * Class that tests our Generics RandomBox class with multiple types put into the RandomBox
+ * 		i.e. String, Integer, Employee, etc...
+ * 
+ * @author bradleywillard
+ *
+ */
 public class Lotteries {
 
 	public static void main(String[] args) {

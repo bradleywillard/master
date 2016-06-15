@@ -1,20 +1,13 @@
 package org.bwillard.ccsf.course.cs211s._7_generics;
 
-/* our product class */
 public abstract class Employee implements Comparable<Employee>{
 	
 	private int id;
-	
-	//private final static int DEFAULT_ID = 0;
-	
+		
 	public Employee(int id) {
 		this.id = id;
 	}
-	/*
-	public Employee() {
-		this(DEFAULT_ID);
-	}
-	*/
+	
 	public int getID() {
 		return id;
 	}
@@ -48,13 +41,16 @@ public abstract class Employee implements Comparable<Employee>{
 		} else {
 			return 0;
 		}
-		// return this.id - otherEmployee.id;
-		// return this.firstName.compareTo(otherEmployee.firstName);
 	}
 	
-	public abstract void pay();
+	
 	public void review() {
 		System.out.println("Reviewing employee " + id);
 	}
+	
+	/**
+	 * abstract methods
+	 */
+	public abstract void pay();
 	public abstract void benefits();
 }
