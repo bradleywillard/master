@@ -2,13 +2,29 @@ package org.bwillard.ccsf.course.cs211s._11_threads;
 
 import java.util.Random;
 
+/**
+ * This is a thread class that rolls two dice, n number of times and keeps track of 
+ * the number of doubles thrown by it's player
+ * 
+ * @author bradleywillard
+ *
+ */
 public class DicePlayer extends Thread {
 	
+	/**
+	 * Instance data
+	 */
 	private Random generator;
 	private int numDoubles;
 	private int timesToRoll;
 	private int playerNum;
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param playerNum
+	 * @param timesToRoll
+	 */
 	public DicePlayer(int playerNum, int timesToRoll) {
 		this.timesToRoll = timesToRoll;
 		this.playerNum = playerNum;
@@ -22,7 +38,7 @@ public class DicePlayer extends Thread {
 	
 	@Override
 	public String toString() {
-		//add one to the playerNum for display output since it's based on the array index
+		// Add one to the playerNum for display output since it's based on the array index
 		return "Player " + (playerNum + 1) + " with " + numDoubles + " doubles";
 	}
 	
@@ -36,7 +52,7 @@ public class DicePlayer extends Thread {
 	}
 	
 	public void run() {
-		// YOUR CODE HERE (roll the dice the times specified by timesToRoll)
+		// Roll the dice the times specified by timesToRoll
 		for(int i = 0; i < timesToRoll; i++) {
 			roll();
 		}
