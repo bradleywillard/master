@@ -2,6 +2,12 @@ package org.bwillard.ccsf.course.cs211s._9_lambdas;
 
 import java.time.LocalDate;
 
+/**
+ * Simple Pojo to hold the information for a single eviction object
+ * 
+ * @author bradleywillard
+ *
+ */
 public class Eviction implements Comparable<Eviction>{
 	private String evictionId;
 	private String address;

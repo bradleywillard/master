@@ -17,13 +17,25 @@ import java.util.List;
 import java.util.Locale;
 
 
+/**
+ * This class builds off of what was done in the _8_collections project.  
+ * 		It also reads in a csv file, puts the dataset into multiple types of collections
+ * 		i.e. Set, List, Map and displays some interesting data about the dataset.
+ * 		Only difference is this time we're using Lambdas to do it
+ * 		In this case our datq happens to be all Evictions in San Francisco since 1997
+ * 
+ * Purpose: Illustrate uses of Java 8 Lambdas
+ * 
+ * @author bradleywillard
+ *
+ */
 public class EvictionsReader {
 
 	private static final String DELIMITER_REGEX = ",(?=(([^\"]*\"){2})*[^\"]*$)";
 	private static final String DATE_REGEX = "(([0-9]{2})/){2}([0-9]{4})";
 	private static final String ZIP_REGEX = "[0-9]{5}";
 	private static final String ENCODING = "UTF-8";
-	private static final String FILE_PATH = "src/org/bwillard/ccsf/course/cs211s/assn8/";
+	private static final String FILE_PATH = "src/org/bwillard/ccsf/course/cs211s/_9_lambdas/";
 	private static final String FILE_NAME = "Eviction_Notices.csv";
 	private static final String DATE_FMT = "MM/dd/uuuu";
 	private static final String EXTRACT_STREET_FROM_ADDRESS_REGEX = "^[0-9]* Block of ";

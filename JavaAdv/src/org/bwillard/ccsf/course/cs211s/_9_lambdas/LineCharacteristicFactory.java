@@ -8,7 +8,9 @@ public class LineCharacteristicFactory {
 	
 	public static LineCharacteristic createLineCharacteristic(String type) {
 		LineCharacteristic lc = (Point2D p1, Point2D p2) -> {
-			if(type.equals(LineChar.DISTANCE.getCharacteristic())) {
+			if (p1 == null || p2 == null) {
+				return null;
+			} else if(type.equals(LineChar.DISTANCE.getCharacteristic())) {
 				double distance = Math.abs(p1.getX() - p2.getX()) + Math.abs(p1.getY() - p2.getY());
 				return String.valueOf(distance);
 			} else if(type.equals(LineChar.MIDPOINT.getCharacteristic())) {

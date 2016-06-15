@@ -10,15 +10,36 @@ import static org.bwillard.ccsf.course.cs211s._9_lambdas.LineCharacteristic.Line
 import java.awt.geom.*;
 import java.util.Random;
 
+/**
+ * Class that illustrates using Lambdas with Swing GUI, ActionListeners, etc..
+ * 		It requires two mouse clicks from the user in the window pane, representing
+ * 		two points painted on the screen.  The user may then click on any or all of the
+ * 		3 buttons to:
+ * 			1) get the distance between the two points
+ * 			2) get the midpoint   "      "   "    "
+ * 			3) check whether the line between the two points is perfectly vertical or horizontal
+ * @author bradleywillard
+ *
+ */
 public class GraphingControls extends JPanel { 
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4387512542429408479L;
+	private static final String ERR_MSG = "Please click inside the pane to create two points";
+	
+	/**
+	 * Instance data
+	 */
 	private JLabel coordinateLabel, distanceLabel, midpointLabel, vertHorizLabel;
 	private JButton distanceButton, midpointButton, vertHorizButton;
-	
 	private Point2D point1, point2;
-
 	private Color color;
 
+	/**
+	 * Constructor
+	 */
 	public GraphingControls () {
 
 		setLayout(new GridLayout(4,1));
@@ -37,11 +58,15 @@ public class GraphingControls extends JPanel {
 		distanceLabel = new JLabel("");
 		distancePanel.add(distanceButton);
 		distancePanel.add(distanceLabel);
-		// ??? DISTANCE BUTTON NEEDS A LISTENER
+		// ButtonListener for meausuring the distance between the two points
 		distanceButton.addActionListener(e -> {
 			String ch = LineChar.DISTANCE.getCharacteristic();
 			LineCharacteristic lc = LineCharacteristicFactory.createLineCharacteristic(ch);
-			distanceLabel.setText(lc.lineCharacteristic(point1, point2));
+			if(point1 == null || point2 == null) {
+				JOptionPane.showMessageDialog(null, ERR_MSG, "ERROR", JOptionPane.ERROR_MESSAGE);
+			} else {
+				distanceLabel.setText(lc.lineCharacteristic(point1, point2));
+			}
 		});
 		add(distancePanel);
 		
@@ -53,11 +78,15 @@ public class GraphingControls extends JPanel {
 		midpointLabel = new JLabel("");
 		midPointPanel.add(midpointButton);
 		midPointPanel.add(midpointLabel);
-		// ??? MIDPOINT BUTTON NEEDS A LISTENER
+		// ButtonListener for measuring the midpoint
 		midpointButton.addActionListener(e -> {
 			String ch = LineChar.MIDPOINT.getCharacteristic();
 			LineCharacteristic lc = LineCharacteristicFactory.createLineCharacteristic(ch);
-			midpointLabel.setText(lc.lineCharacteristic(point1, point2));
+			if(point1 == null || point2 == null) {
+				JOptionPane.showMessageDialog(null, ERR_MSG, "ERROR", JOptionPane.ERROR_MESSAGE);
+			} else {
+				midpointLabel.setText(lc.lineCharacteristic(point1, point2));
+			}
 		});
 		add(midPointPanel);
 		
@@ -68,11 +97,15 @@ public class GraphingControls extends JPanel {
 		vertHorizLabel = new JLabel("");
 		vertHorizPanel.add(vertHorizButton);
 		vertHorizPanel.add(vertHorizLabel);
-		// ??? VERTHORIZ BUTTON NEEDS A LISTENER
+		//ButtonListener for checking if the line is vertical or horizontal
 		vertHorizButton.addActionListener(e -> {
 			String ch = LineChar.VERT_HORT.getCharacteristic();
 			LineCharacteristic lc = LineCharacteristicFactory.createLineCharacteristic(ch);
-			vertHorizLabel.setText(lc.lineCharacteristic(point1, point2));
+			if(point1 == null || point2 == null) {
+				JOptionPane.showMessageDialog(null, ERR_MSG, "ERROR", JOptionPane.ERROR_MESSAGE);
+			} else {
+				vertHorizLabel.setText(lc.lineCharacteristic(point1, point2));
+			}
 		});
 		add(vertHorizPanel);
 	
