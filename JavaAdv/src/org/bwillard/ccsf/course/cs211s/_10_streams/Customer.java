@@ -1,5 +1,11 @@
 package org.bwillard.ccsf.course.cs211s._10_streams;
 
+/**
+ * Customer POJO
+ * 
+ * @author bradleywillard
+ *
+ */
 public class Customer {
 	
 	private String firstName, lastName, id;

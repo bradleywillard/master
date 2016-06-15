@@ -1,5 +1,12 @@
 package org.bwillard.ccsf.course.cs211s._3_builder_and_strategy;
 
+/**
+ * Abstract Builder class used by all the other Instrument Builder classes, 
+ * i.e. GuitarBuilder, PianoBuilder, etc...
+ *  
+ * @author bradleywillard
+ *
+ */
 public abstract class InstrumentBuilder {
 	protected String brand, model, pidPrefix;
 	protected InstrumentType type;

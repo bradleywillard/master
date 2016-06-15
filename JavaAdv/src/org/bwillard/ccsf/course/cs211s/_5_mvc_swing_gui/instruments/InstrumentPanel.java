@@ -5,9 +5,17 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-
+/**
+ * 
+ * @author bradleywillard
+ *
+ */
 public class InstrumentPanel extends JPanel{
 
+	/**
+	 * Class vars
+	 */
+	private static final long serialVersionUID = 1L;
 	private static final String SELECT_INSTRUMENT_TYPE = "-- Select Instrument Type --";
 	private static final String ENTER_THE_PRICE = "-- Enter the Price...";
 	private static final String ENTER_THE_MODEL = "-- Enter the Model...";
@@ -19,17 +27,22 @@ public class InstrumentPanel extends JPanel{
 	private static final Font TEXTFIELD_FONT = new Font("Arial", Font.ITALIC, 12);
 	private static final Font DROPDOWN_FONT = new Font("Arial", Font.PLAIN, 12);
 	
+	private static String imagePath = "src/org/bwillard/ccsf/course/cs211s/_5_mvc_swing_gui/instruments/images/";
+	private static String imageFileName = "instruments.png";
+	
+	/**
+	 * Instance data
+	 */
 	private JTextField brand, model, price;
 	private JButton button;
 	private JTextArea outputArea;
 	private final JComboBox<String> types;
-	
-	private static String imagePath = "src/org/bwillard/ccsf/course/cs211s/assn5/instruments/images/";
-	private static String imageFileName = "instruments.png";
 	private Image image;
-	
 	private Instrument instrument;
 	
+	/**
+	 * Constructor
+	 */
 	public InstrumentPanel() {
 		
 		setLayout(new FlowLayout(FlowLayout.LEFT));

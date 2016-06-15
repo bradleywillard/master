@@ -1,6 +1,10 @@
 package org.bwillard.ccsf.course.cs211s._3_builder_and_strategy;
 
-
+/**
+ * 
+ * @author bradleywillard
+ *
+ */
 public class Guitar extends Instrument {
 		
 	private static final String PID_PREFIX = "GUI";
@@ -25,6 +29,12 @@ public class Guitar extends Instrument {
 		return amplified;
 	}
 	
+	/**
+	 * Builder class for Guitars
+	 * 
+	 * @author bradleywillard
+	 *
+	 */
 	public static class GuitarBuilder extends InstrumentBuilder {
 		
 		public GuitarBuilder(String brand, String model, InstrumentType type) {
@@ -34,6 +44,7 @@ public class Guitar extends Instrument {
 			this.price = 00.00;
 			this.amplified = true;
 			this.pidPrefix = PID_PREFIX;
+			//Strategy pattern here as well as the design principle known as Composition
 			this.player = new GuitarPlayer(brand, model, type);
 		}
 		

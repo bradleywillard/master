@@ -24,7 +24,7 @@ import java.util.Random;
 public class GraphingControls extends JPanel { 
 
 	/**
-	 * 
+	 * Class vars
 	 */
 	private static final long serialVersionUID = 4387512542429408479L;
 	private static final String ERR_MSG = "Please click inside the pane to create two points";

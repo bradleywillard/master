@@ -1,5 +1,10 @@
 package org.bwillard.ccsf.course.cs211s._3_builder_and_strategy;
 
+/**
+ * 
+ * @author bradleywillard
+ *
+ */
 public enum InstrumentType {
 	
 	//GUITARS...

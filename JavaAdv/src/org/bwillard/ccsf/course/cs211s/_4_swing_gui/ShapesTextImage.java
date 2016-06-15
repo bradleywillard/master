@@ -22,12 +22,13 @@ public class ShapesTextImage extends JPanel {
 	private static final String LOGO_ACRONYM = "GEP";
 	private static final String CAPTION_TEXT = "GOLDEN EYED PUMA";
 	private static final String IMAGE_FILE_NAME = "puma_gold_eyes.jpg";
+	private static final String IMAGE_PATH = "src/org/bwillard/ccsf/course/cs211s/_4_swing_gui/";
 	
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D g2d = (Graphics2D)g;
-		Image image = new ImageIcon(IMAGE_FILE_NAME).getImage();
+		Image image = new ImageIcon(IMAGE_PATH+IMAGE_FILE_NAME).getImage();
 		g2d.drawImage(image, 50, 50, null);
 		
 		//Black rectangle...

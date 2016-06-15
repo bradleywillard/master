@@ -2,7 +2,11 @@ package org.bwillard.ccsf.course.cs211s._3_builder_and_strategy;
 
 import java.util.Scanner;
 
-
+/**
+ * 
+ * @author bradleywillard
+ *
+ */
 public class InstrumentTester {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);

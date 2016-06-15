@@ -2,6 +2,12 @@ package org.bwillard.ccsf.course.cs211s._10_streams;
 
 import java.time.LocalDate;
 
+/**
+ * Evictions POJO
+ * 
+ * @author bradleywillard
+ *
+ */
 public class Eviction implements Comparable<Eviction>{
 	private String evictionId;
 	private String address;

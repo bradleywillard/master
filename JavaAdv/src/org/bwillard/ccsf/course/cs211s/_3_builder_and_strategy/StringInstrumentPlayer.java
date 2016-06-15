@@ -1,5 +1,11 @@
 package org.bwillard.ccsf.course.cs211s._3_builder_and_strategy;
 
+/**
+ * A class that leverages the Strategy pattern
+ * 
+ * @author bradleywillard
+ *
+ */
 public class StringInstrumentPlayer implements Player {
 	
 	private String brand, model;

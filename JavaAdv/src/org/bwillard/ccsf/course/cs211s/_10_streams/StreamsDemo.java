@@ -7,9 +7,16 @@ import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
 
-public class Homework10Streams {
+/**
+ * This class reads in a .csv file into a List and uses Streams to parse and print out
+ * various subsets of data pertaining to that list
+ * 
+ * @author bradleywillard
+ *
+ */
+public class StreamsDemo {
 	
-	private static final String FILE_PATH = "src/org/bwillard/ccsf/course/cs211s/assn10/";
+	private static final String FILE_PATH = "src/org/bwillard/ccsf/course/cs211s/_10_streams/";
 
 	public static void main(String[] args) throws Exception {
 
@@ -31,9 +38,12 @@ public class Homework10Streams {
 				.collect(Collectors.toCollection(ArrayList::new)); // YOUR ANSWER HERE
 		System.out.println(maPriorityList);
 		
-		List<String> names = customerList.stream()
+		// Q2b: Create and print out a list of all customers first names only
+		System.out.println("\nQ2b: Print out a list of all customer's first names only: ");
+		customerList.stream()
 				.map(c -> c.getFirstName())
-				.collect(Collectors.toCollection(ArrayList::new));
+				.collect(Collectors.toCollection(ArrayList::new))
+				.forEach(System.out::println);
 
 		// Q3: How much money have all customers spent (combined)?
 		System.out.print("\nQ3: Should print 330518.0: ");

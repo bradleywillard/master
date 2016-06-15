@@ -3,6 +3,11 @@ package org.bwillard.ccsf.course.cs211s._3_builder_and_strategy;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 
+ * @author bradleywillard
+ *
+ */
 public abstract class Department {
 
 	private static List<Instrument> instruments;

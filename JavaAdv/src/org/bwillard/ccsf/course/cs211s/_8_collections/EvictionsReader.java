@@ -25,7 +25,7 @@ import java.util.TreeSet;
 import java.util.HashSet;
 
 /**
- * The class reads in a csv file, puts the dataset into multiple types of collections
+ * This class reads in a csv file, puts the dataset into multiple types of collections
  * 		i.e. Set, List, Map and displays some interesting data about the dataset.
  * 		In this case our datq happens to be all Evictions in San Francisco since 1997
  * 

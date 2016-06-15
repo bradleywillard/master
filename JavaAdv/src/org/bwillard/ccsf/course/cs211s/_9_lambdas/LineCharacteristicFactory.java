@@ -4,6 +4,11 @@ import java.awt.geom.Point2D;
 
 import static org.bwillard.ccsf.course.cs211s._9_lambdas.LineCharacteristic.LineChar;
 
+/**
+ * 
+ * @author bradleywillard
+ *
+ */
 public class LineCharacteristicFactory {
 	
 	public static LineCharacteristic createLineCharacteristic(String type) {
