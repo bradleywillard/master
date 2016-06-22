@@ -27,7 +27,7 @@ public class StreamsDemo {
 		System.out.print("Q1: Should print 20: ");
 		long caCustomters = customerList.stream()
 				.filter(customer -> "CA".equalsIgnoreCase(customer.getState()))
-				.count(); // YOUR ANSWER HERE
+				.count(); 
 		System.out.println(caCustomters);
 		
 		// Q2: Create a list of all priority customers in MA.
@@ -35,7 +35,7 @@ public class StreamsDemo {
 		List<Customer> maPriorityList = customerList.stream()
 				.filter(c -> c.isPriority())
 				.filter(c -> "MA".equalsIgnoreCase(c.getState()))
-				.collect(Collectors.toCollection(ArrayList::new)); // YOUR ANSWER HERE
+				.collect(Collectors.toCollection(ArrayList::new)); 
 		System.out.println(maPriorityList);
 		
 		// Q2b: Create and print out a list of all customers first names only
@@ -49,7 +49,7 @@ public class StreamsDemo {
 		System.out.print("\nQ3: Should print 330518.0: ");
 		double total = customerList.stream()
 				.mapToDouble(c -> c.getAmountSpent())
-				.sum(); // YOUR ANSWER HERE
+				.sum(); 
 		System.out.println(total);
 		
 		// Q4: How much money have all priority customers spent (combined)?
@@ -57,7 +57,7 @@ public class StreamsDemo {
 		double priorityTotal = customerList.stream()
 				.filter(c -> c.isPriority())
 				.mapToDouble(c -> c.getAmountSpent())
-				.sum(); // YOUR ANSWER HERE
+				.sum(); 
 		System.out.println(priorityTotal);
 		
 		// Q5: Create a map of all WY priority customers (key=id, value=customer)
@@ -65,7 +65,7 @@ public class StreamsDemo {
 		Map<String, Customer> wyCustomers = customerList.stream()
 				.filter(c -> "WY".equalsIgnoreCase(c.getState()))
 				.filter(c -> c.isPriority())
-				.collect(Collectors.toMap(Customer::getId, Function.identity()));; // YOUR ANSWER HERE
+				.collect(Collectors.toMap(Customer::getId, Function.identity()));; 
 		System.out.println(wyCustomers);
 		
 		// Q6a: What is the greatest amount of money spent by a NY priority customer?
@@ -75,9 +75,8 @@ public class StreamsDemo {
 				.filter(c -> c.isPriority())
 				.mapToDouble(Customer::getAmountSpent)
 				.max()
-				.getAsDouble();// YOUR ANSWER HERE
+				.getAsDouble();
 		System.out.println(nyHighAmount);
-		//BRADASDFASDF
 		
 		//Q6b: Print the customers in sorted order by amount spent, then by last name
 		System.out.println("\nQ6b: Should print the customers in sorted order by amount spent, then by last name");
@@ -101,18 +100,16 @@ public class StreamsDemo {
 		// Print the amount spent by the customer. If there is none, nothing should be printed.
 		// Note: you can test your code with a lower amount, too.
 		System.out.println("\nQ8: Should print nothing: ");
-		
-		// YOUR ANSWER HERE
-		// YOU'LL ALSO HAVE TO ADD THE LINE TO MAKE IT PRINT!
+
 		Optional<Customer> opCustomer = customerList.stream()
 				.filter(c -> c.getAmountSpent() > 9800)
 				.findAny();
 		if(opCustomer.isPresent())
-			System.out.println(opCustomer.get().getAmountSpent());
+		System.out.println(opCustomer.get().getAmountSpent());
 		
 		// Q9: Find the sum of the numbers represented in an String array.
 		String[] numWords = {"1", "2", "3", "4", "5", "6"};
-		// YOUR ANSWER HERE
+		
 		int sum = Arrays.asList(numWords).stream()
 				.map(Integer::parseInt)
 				.mapToInt(i -> i)
@@ -121,7 +118,7 @@ public class StreamsDemo {
 		
 		// Q10: Create a String of the numbers represented in the array, separated by semicolons.
 		Integer[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-		// YOUR ANSWER HERE
+		
 		String concat = Arrays.asList(nums).stream()
 				.map(String::valueOf)
 				.collect(Collectors.joining(";")); 
@@ -131,7 +128,7 @@ public class StreamsDemo {
 		// Keep only the numbers that are factors of 3.
 		// Print the first 10 of these numbers.
 		System.out.println("\nQ11: Will print 10 numbers that are factors of 3 between 1-100:");
-		// YOUR ANSWER HERE
+		
 		IntStream.of(new Random().ints(1, 100).filter(i -> i % 3 == 0).limit(10).toArray())
 			.forEach(System.out::println);
 		
