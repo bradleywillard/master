@@ -10,6 +10,7 @@ import java.util.List;
  */
 public class MultiNodePlay {
 
+	private static final int NOT_FOUND = -1;
 	/**
 	 * Instance data
 	 */
@@ -56,6 +57,10 @@ public class MultiNodePlay {
 		System.out.println("Expected hops after flattening linked Node for 210: (Expect 33) : " + mnp.hops(flatList, 210));
 		System.out.println("Expected hops after flattening linked Node for 343: (Expect 48) : " + mnp.hops(flatList, 343));
 		
+		System.out.println("\nEDGE CASES:");
+		System.out.println("Expected hops before flattening linked Node for 214587: (Expect -1 - NOT FOUND) : " + mnp.hops(214587));
+		System.out.println("Expected hops after flattening linked Node for 214587: (Expect -1 - NOT FOUND) : " + mnp.hops(flatList, 214587));
+		
 		System.out.print("\nFlattened List - (" + flatList.size() + " items) : [");
 		flatList.stream().forEach(node -> System.out.print(node.value + " "));
 		System.out.print("]\n\n");
@@ -100,10 +105,12 @@ public class MultiNodePlay {
 				Node below = new Node();
 				below.value = column.value * (i + 1);
 				curr.below = below;
+				curr = curr.below;
 				i++;
+				//Print stuff
 				System.out.print(below.value);
 				if(i < size) System.out.print(", ");
-				curr = curr.below;
+				
 			}
 			System.out.println("]");
 			column = column.next;
@@ -141,12 +148,15 @@ public class MultiNodePlay {
 	 */
 	private int hops(List<Node> nodeList, final int searchVal) {
 		int hops = 0;
+		boolean found = false;
 		for(Node node : nodeList) {
-			if(node.value == searchVal) 
+			if(node.value == searchVal) {
+				found = true;
 				break;
+			}
 			hops++;
 		}
-		return hops;
+		return found ? hops : NOT_FOUND;
 	}
 	
 	/**
@@ -173,7 +183,7 @@ public class MultiNodePlay {
 			}
 			curr = curr.next;
 		}
-		return hops;
+		return NOT_FOUND;
 	}
 	
 }
