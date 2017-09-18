@@ -34,7 +34,7 @@ public class MultiNodePlay {
 		System.out.println("Expected hops after flattening linked Node for 343: (Expect 54) : " + mnp.hops(flatList, 343));
 		
 		System.out.print("\nFlattened List : [");
-		flatList.forEach(node -> System.out.print(node.value + " "));
+		flatList.stream().forEach(node -> System.out.print(node.value + " "));
 		System.out.print("]\n\n");
 	}
 	
