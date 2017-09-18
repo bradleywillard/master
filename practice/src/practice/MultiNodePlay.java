@@ -9,11 +9,12 @@ import java.util.List;
  *
  */
 public class MultiNodePlay {
-	
+
 	/**
 	 * Class data
 	 */
 	private static final int NOT_FOUND = -1;
+	
 	/**
 	 * Instance data
 	 */
@@ -36,8 +37,8 @@ public class MultiNodePlay {
 	 * @param value
 	 * @param size
 	 */
-	private MultiNodePlay(final int value, final int size) {
-		createMultiNode(value, size);
+	private MultiNodePlay() {
+		head = new Node();
 	}
 	
 	/**
@@ -45,7 +46,8 @@ public class MultiNodePlay {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		MultiNodePlay mnp = new MultiNodePlay(7, 7);
+		MultiNodePlay mnp = new MultiNodePlay();
+		mnp.createMultiNode(7, 7);
 		
 		System.out.println("\nExpected hops before flattening linked Node for 49: (Expect 6) : " + mnp.hops(49));
 		System.out.println("Expected hops before flattening linked Node for 70: (Expect 11) : " + mnp.hops(70));
@@ -80,7 +82,7 @@ public class MultiNodePlay {
 	 * @param size
 	 */
 	private void createTopNodeRow(final int value, final int size) {
-		head = new Node();
+		
 		Node curr = head;
 		int i = 1;
 		while(i <= size) {
