@@ -3,20 +3,43 @@ package practice;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * This class was designed to illustrate the use of a Multi-Level Linked Node
+ * @author Bradley D. Willard
+ *
+ */
 public class MultiNodePlay {
 
+	/**
+	 * Instance data
+	 */
 	private Node head;
 	
+	/**
+	 * Inner class Node
+	 * @author Bradley D. Willard
+	 *
+	 */
 	private class Node {
 		Node next;
 		Node below;
 		int value;
 	}
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param value
+	 * @param size
+	 */
 	private MultiNodePlay(final int value, final int size) {
 		createMultiNode(value, size);
 	}
 	
+	/**
+	 * Program start point and test scenarios
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		MultiNodePlay mnp = new MultiNodePlay(7, 7);
 		
@@ -38,12 +61,7 @@ public class MultiNodePlay {
 		System.out.print("]\n\n");
 	}
 	
-	/**
-	 * Constructor
-	 * 
-	 * @param value
-	 * @param size
-	 */
+	
 	private void createMultiNode(final int value, final int size) {
 		createTopNodeRow(value, size);
 		createChildNodes(value, size);
