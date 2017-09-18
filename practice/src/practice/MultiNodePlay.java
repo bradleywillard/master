@@ -190,16 +190,16 @@ public class MultiNodePlay {
 			if(curr.value == searchVal) {
 				return hops;
 			}
-			hops++;
 			Node below = curr.below;
 			while(below != null) {
+				hops++;
 				if(below.value == searchVal) {
 					return hops;
 				}
 				below = below.below;
-				hops++;
 			}
 			curr = curr.next;
+			hops++;
 		}
 		return NOT_FOUND;
 	}
