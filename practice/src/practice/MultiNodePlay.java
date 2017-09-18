@@ -33,9 +33,6 @@ public class MultiNodePlay {
 	
 	/**
 	 * Constructor
-	 * 
-	 * @param value
-	 * @param size
 	 */
 	private MultiNodePlay() {
 		head = new Node();
