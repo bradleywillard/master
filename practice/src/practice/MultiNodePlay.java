@@ -101,7 +101,7 @@ public class MultiNodePlay {
 		while(column != null) {
 			System.out.print("[");
 			Node curr = column;
-			System.out.print(curr.value + ", ");
+			System.out.print(curr.value + "-> ");
 			int i = 1;
 			while(i < size) {
 				Node child = new Node();
@@ -111,10 +111,11 @@ public class MultiNodePlay {
 				i++;
 				//Print stuff
 				System.out.print(curr.value);
-				if(i < size) System.out.print(", ");
+				if(i < size) System.out.print("-> ");
 				
 			}
 			System.out.println("]");
+			if(column.next != null) System.out.println(" v");
 			column = column.next;
 		}
 	}
