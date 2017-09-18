@@ -13,7 +13,7 @@ public class MultiNodePlay {
 		int value;
 	}
 	
-	private MultiNodePlay(int value, int size) {
+	private MultiNodePlay(final int value, final int size) {
 		createMultiNode(value, size);
 	}
 	
@@ -38,12 +38,12 @@ public class MultiNodePlay {
 		System.out.print("]\n\n");
 	}
 	
-	private void createMultiNode(int value, int size) {
+	private void createMultiNode(final int value, final int size) {
 		createTopNodeRow(value, size);
 		createChildNodes(value, size);
 	}
 
-	private void createTopNodeRow(int value, int size) {
+	private void createTopNodeRow(final int value, final int size) {
 		head = new Node();
 		Node curr = head;
 		int i = 1;
@@ -92,7 +92,7 @@ public class MultiNodePlay {
 		return flatList;
 	}
 	
-	private int hops(List<Node> nodeList, int searchVal) {
+	private int hops(List<Node> nodeList, final int searchVal) {
 		int hops = 0;
 		for(Node node : nodeList) {
 			if(node.value == searchVal) 
@@ -102,7 +102,7 @@ public class MultiNodePlay {
 		return hops;
 	}
 	
-	private int hops(int searchVal) {
+	private int hops(final int searchVal) {
 		int hops = 0;
 		Node curr = head;
 		while(curr != null) {
