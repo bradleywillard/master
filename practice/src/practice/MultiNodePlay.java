@@ -102,13 +102,13 @@ public class MultiNodePlay {
 			System.out.print(curr.value + ", ");
 			int i = 1;
 			while(i < size) {
-				Node below = new Node();
-				below.value = column.value * (i + 1);
-				curr.below = below;
+				Node child = new Node();
+				child.value = column.value * (i + 1);
+				curr.below = child;
 				curr = curr.below;
 				i++;
 				//Print stuff
-				System.out.print(below.value);
+				System.out.print(curr.value);
 				if(i < size) System.out.print(", ");
 				
 			}
