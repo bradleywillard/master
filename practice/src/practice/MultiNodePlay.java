@@ -38,11 +38,22 @@ public class MultiNodePlay {
 		System.out.print("]\n\n");
 	}
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param value
+	 * @param size
+	 */
 	private void createMultiNode(final int value, final int size) {
 		createTopNodeRow(value, size);
 		createChildNodes(value, size);
 	}
 
+	/**
+	 * Creates the main flat row of singly linked nodes
+	 * @param value
+	 * @param size
+	 */
 	private void createTopNodeRow(final int value, final int size) {
 		head = new Node();
 		Node curr = head;
@@ -56,6 +67,11 @@ public class MultiNodePlay {
 		}
 	}
 
+	/**
+	 * Creates child node columns for nodes in the top node row
+	 * @param value
+	 * @param size
+	 */
 	private void createChildNodes(final int value, final int size) {
 		Node column = head;
 		while(column != null) {
@@ -77,6 +93,12 @@ public class MultiNodePlay {
 		}
 	}
 	
+	/**
+	 * Creates a flattened horizontal LinkedList from the MultiLevel Node matrix
+	 * Adds Nodes from left to right
+	 *  
+	 * @return
+	 */
 	private List<Node> flattenList() {
 		List<Node> flatList = new LinkedList<>();
 		Node curr = head;
@@ -92,6 +114,14 @@ public class MultiNodePlay {
 		return flatList;
 	}
 	
+	/**
+	 * Counts the number of hops to find the search value in the LinkedList and returns once found.
+	 * O(n) in the worst case
+	 * 
+	 * @param nodeList
+	 * @param searchVal
+	 * @return
+	 */
 	private int hops(List<Node> nodeList, final int searchVal) {
 		int hops = 0;
 		for(Node node : nodeList) {
@@ -102,6 +132,12 @@ public class MultiNodePlay {
 		return hops;
 	}
 	
+	/**
+	 * Counts the number of hops to find the search value traversing through the MultiLevel Node and returns once found.
+	 * 0(n^2) in the worst case if the searchVal is never found
+	 * @param searchVal
+	 * @return
+	 */
 	private int hops(final int searchVal) {
 		int hops = 0;
 		Node curr = head;
