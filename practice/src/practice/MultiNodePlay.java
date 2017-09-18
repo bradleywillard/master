@@ -46,6 +46,9 @@ public class MultiNodePlay {
 		MultiNodePlay mnp = new MultiNodePlay();
 		mnp.createMultiNode(7, 7);
 		
+		System.out.println("\nMultiLevel Node Matrix: ");
+		mnp.printMultiLevelNodeMatrix();
+		
 		System.out.println("\nExpected hops before flattening linked Node for 49: (Expect 6) : " + mnp.hops(49));
 		System.out.println("Expected hops before flattening linked Node for 70: (Expect 11) : " + mnp.hops(70));
 		System.out.println("Expected hops before flattening linked Node for 126: (Expect 19) : " + mnp.hops(126));
@@ -66,6 +69,7 @@ public class MultiNodePlay {
 		System.out.print("\nFlattened List - (" + flatList.size() + " items) : [");
 		flatList.stream().forEach(node -> System.out.print(node.value + " "));
 		System.out.print("]\n\n");
+		
 	}
 	
 	private void createMultiNode(final int value, final int size) {
@@ -99,9 +103,7 @@ public class MultiNodePlay {
 	private void createChildNodes(final int value, final int size) {
 		Node column = head;
 		while(column != null) {
-			System.out.print("[");
 			Node curr = column;
-			System.out.print(curr.value + "-> ");
 			int i = 1;
 			while(i < size) {
 				Node child = new Node();
@@ -109,14 +111,27 @@ public class MultiNodePlay {
 				curr.below = child;
 				curr = curr.below;
 				i++;
-				//Print stuff
-				System.out.print(curr.value);
-				if(i < size) System.out.print("-> ");
-				
+			}
+			column = column.next;
+		}
+	}
+	
+	/**
+	 * Prints out a legible representation of the Multi-Level Node matrix
+	 */
+	private void printMultiLevelNodeMatrix() {
+		Node curr = head;
+		while(curr != null) {
+			System.out.print("[" + curr.value + "-> ");
+			Node below = curr.below;
+			while(below != null) {
+				System.out.print(below.value + (below.below != null ? "-> " : ""));
+				below = below.below;
 			}
 			System.out.println("]");
-			if(column.next != null) System.out.println(" v");
-			column = column.next;
+			if(curr.next != null) 
+				System.out.println(" v");
+			curr = curr.next;
 		}
 	}
 	
