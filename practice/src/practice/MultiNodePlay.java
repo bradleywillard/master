@@ -44,23 +44,22 @@ public class MultiNodePlay {
 		MultiNodePlay mnp = new MultiNodePlay(7, 7);
 		
 		System.out.println("\nExpected hops before flattening linked Node for 49: (Expect 6) : " + mnp.hops(49));
-		System.out.println("Expected hops before flattening linked Node for 70: (Expect 12) : " + mnp.hops(70));
-		System.out.println("Expected hops before flattening linked Node for 126: (Expect 21) : " + mnp.hops(126));
-		System.out.println("Expected hops before flattening linked Node for 210: (Expect 37) : " + mnp.hops(210));
-		System.out.println("Expected hops before flattening linked Node for 343: (Expect 54) : " + mnp.hops(343));
+		System.out.println("Expected hops before flattening linked Node for 70: (Expect 11) : " + mnp.hops(70));
+		System.out.println("Expected hops before flattening linked Node for 126: (Expect 19) : " + mnp.hops(126));
+		System.out.println("Expected hops before flattening linked Node for 210: (Expect 33) : " + mnp.hops(210));
+		System.out.println("Expected hops before flattening linked Node for 343: (Expect 48) : " + mnp.hops(343));
 		
 		List<Node> flatList = mnp.flattenList();
 		System.out.println("\nExpected hops after flattening linked Node for 49: (Expect 6) : " + mnp.hops(flatList, 49));
-		System.out.println("Expected hops after flattening linked Node for 70: (Expect 12) : " + mnp.hops(flatList, 70));
-		System.out.println("Expected hops after flattening linked Node for 126: (Expect 21) : " + mnp.hops(flatList, 126));
-		System.out.println("Expected hops after flattening linked Node for 210: (Expect 37) : " + mnp.hops(flatList, 210));
-		System.out.println("Expected hops after flattening linked Node for 343: (Expect 54) : " + mnp.hops(flatList, 343));
+		System.out.println("Expected hops after flattening linked Node for 70: (Expect 11) : " + mnp.hops(flatList, 70));
+		System.out.println("Expected hops after flattening linked Node for 126: (Expect 19) : " + mnp.hops(flatList, 126));
+		System.out.println("Expected hops after flattening linked Node for 210: (Expect 33) : " + mnp.hops(flatList, 210));
+		System.out.println("Expected hops after flattening linked Node for 343: (Expect 48) : " + mnp.hops(flatList, 343));
 		
-		System.out.print("\nFlattened List : [");
+		System.out.print("\nFlattened List - (" + flatList.size() + " items) : [");
 		flatList.stream().forEach(node -> System.out.print(node.value + " "));
 		System.out.print("]\n\n");
 	}
-	
 	
 	private void createMultiNode(final int value, final int size) {
 		createTopNodeRow(value, size);
@@ -93,17 +92,17 @@ public class MultiNodePlay {
 	private void createChildNodes(final int value, final int size) {
 		Node column = head;
 		while(column != null) {
-			int i = 1;
 			System.out.print("[");
 			Node curr = column;
 			System.out.print(curr.value + ", ");
-			while(i <= size) {
+			int i = 1;
+			while(i < size) {
 				Node below = new Node();
 				below.value = column.value * (i + 1);
 				curr.below = below;
 				i++;
 				System.out.print(below.value);
-				if(i <= size) System.out.print(", ");
+				if(i < size) System.out.print(", ");
 				curr = curr.below;
 			}
 			System.out.println("]");
