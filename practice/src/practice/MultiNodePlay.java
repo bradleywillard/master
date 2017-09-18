@@ -83,7 +83,6 @@ public class MultiNodePlay {
 	 * @param size
 	 */
 	private void createTopNodeRow(final int value, final int size) {
-		
 		Node curr = head;
 		int i = 1;
 		while(i <= size) {
@@ -118,6 +117,7 @@ public class MultiNodePlay {
 	
 	/**
 	 * Prints out a legible representation of the Multi-Level Node matrix
+	 * 0(n^2)
 	 */
 	private void printMultiLevelNodeMatrix() {
 		Node curr = head;
